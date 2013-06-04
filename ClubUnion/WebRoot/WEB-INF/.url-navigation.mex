@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JSFFlowViewLayout version="1.0">
+  <Drawing gridVisible="true" snapOn="true" />
+  <JSFFlowResource path="/club/apply.xhtml" location="112,591" dimension="144,36" />
+  <JSFFlowResource path="/index.jsf" location="0,318" dimension="96,36" />
+  <JSFFlowResource path="/account/login.xhtml" location="44,207" dimension="162,36" />
+  <JSFFlowResource path="/account/regist.xhtml" location="281,207" dimension="166,36" />
+  <JSFFlowResource path="/account/login.jsf" location="30,730" dimension="144,36" />
+  <JSFFlowResource path="/account/edit_password.xhtml" location="72,399" dimension="217,36" />
+  <JSFFlowResource path="/account/index.jsf" location="480,430" dimension="146,36" />
+  <JSFFlowResource path="/account/edit.xhtml" location="453,591" dimension="155,36" />
+  <JSFFlowResource path="/document/edit.xhtml" location="43,0" dimension="168,36" />
+  <JSFFlowResource path="/" location="267,126" dimension="49,36" />
+  <JSFFlowResource path="/document/create.xhtml" location="288,0" dimension="182,36" />
+  <JSFFlowResource path="/letter/create.xhtml" location="580,0" dimension="154,36" />
+  <JSFFlowResource path="/letter/index.jsf" location="180,1030" dimension="131,36" />
+  <JSFFlowResource path="/letter/index.xhtml" location="30,1130" dimension="149,36" />
+  <JSFFlowResource path="/platform/club_create_apply.xhtml" location="330,1130" dimension="240,36" />
+  <JSFFlowResource path="/platform/user_search.xhtml" location="630,730" dimension="206,36" />
+  <JSFFlowResource path="/platform/user_search_result.jsf" location="630,830" dimension="225,36" />
+  <JSFFlowResource path="/*" location="330,530" dimension="54,36" />
+  <JSFFlowNavigationCase id="/club/apply.xhtml,/index.jsf,success,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="112,609" />
+      <AbsolutePoint location="48,609" />
+      <AbsolutePoint location="48,354" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/account/login.xhtml,/index.jsf,success,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="51,243" />
+      <AbsolutePoint location="51,318" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/account/regist.xhtml,/account/login.jsf,success,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="391,243" />
+      <AbsolutePoint location="391,748" />
+      <AbsolutePoint location="174,748" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/account/edit_password.xhtml,/account/index.jsf,success,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="289,417" />
+      <AbsolutePoint location="553,417" />
+      <AbsolutePoint location="553,430" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/account/edit.xhtml,/account/index.jsf,success,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="553,591" />
+      <AbsolutePoint location="553,466" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/document/edit.xhtml,/,success,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="127,36" />
+      <AbsolutePoint location="127,144" />
+      <AbsolutePoint location="267,144" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/document/create.xhtml,/index.jsf,success,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="460,36" />
+      <AbsolutePoint location="460,336" />
+      <AbsolutePoint location="96,336" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/letter/create.xhtml,/letter/index.jsf,success,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="657,36" />
+      <AbsolutePoint location="657,679" />
+      <AbsolutePoint location="245,679" />
+      <AbsolutePoint location="245,1030" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/letter/index.xhtml,/letter/index.jsf,success,#{LetterDeleteBacking.delete}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="179,1148" />
+      <AbsolutePoint location="245,1148" />
+      <AbsolutePoint location="245,1066" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/platform/club_create_apply.xhtml,/index.jsf,success,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="439,1130" />
+      <AbsolutePoint location="439,351" />
+      <AbsolutePoint location="96,351" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/platform/user_search.xhtml,/platform/user_search_result.jsf,success,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="742,766" />
+      <AbsolutePoint location="742,830" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/*,/index.jsf,success,#{UserBacking.logout}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="330,548" />
+      <AbsolutePoint location="63,548" />
+      <AbsolutePoint location="63,354" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/*,/index.jsf,fail,#{UserBacking.logout}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="357,548" />
+      <AbsolutePoint location="48,336" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+</JSFFlowViewLayout>
+

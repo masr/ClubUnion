@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:my="http://www.clubunion.com"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+  <ui:composition>
+  <style>
+  #content1{display:none}
+  </style>
+ 	
+   
+  
+  请输入标题<br/>
+  <input type="text" class="creator_title"></input>
+  <br/>
+  请输入文字<br/>
+  <input id="content1" class="creator_text" />
+  <iframe id="text_creator_editor" src="/ClubUnion/editor/editor2.htm?id=content1&amp;ReadCookie=0" frameBorder="0" marginHeight="0" marginWidth="0" scrolling="no"
+					width="650" height="450"></iframe>
+			<br/>
+  <a href="#" >确认</a>
+  </ui:composition>
+   
+	
+</html>
+

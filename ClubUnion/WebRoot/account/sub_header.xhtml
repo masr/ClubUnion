@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+          <ui:composition >
+          <h:panelGroup rendered="#{UserBacking.loggedIn}">
+          <ui>
+          <li>
+         <h:outputLink value="account/"><h:outputText value="工作主页"></h:outputText></h:outputLink></li>
+                 <li> <h:outputLink value="/ClubUnion/profile/"><h:outputText value="我的信息"></h:outputText></h:outputLink></li>
+                  <li><h:outputLink value="/ClubUnion/account/request"><h:outputText value="我的请求"></h:outputText></h:outputLink></li>
+                 <li> <h:outputLink value="/ClubUnion/account/document"><h:outputText value="我的文件"></h:outputText></h:outputLink></li>
+                 <li> <h:outputLink value="/ClubUnion/account/friend"><h:outputText value="我的好友"></h:outputText></h:outputLink></li>
+                <li>  <h:outputLink value="/ClubUnion/account/edit"><h:outputText value="编辑资料"></h:outputText></h:outputLink></li>
+                <li>  <h:outputLink value="/ClubUnion/account/edit_passwd"><h:outputText value="修改我的密码"></h:outputText></h:outputLink></li>
+       </ui>
+         </h:panelGroup>
+        </ui:composition>
+	
+</html>
+

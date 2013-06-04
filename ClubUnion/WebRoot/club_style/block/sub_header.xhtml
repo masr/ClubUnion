@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+        <ui:composition>
+        
+        <div id="sub_header">
+        <div class="design_content">
+        <ul>
+        <li>
+            <h:outputLink value="/ClubUnion/club/#{param['club_id']}"><h:outputText value="#{ClubHelpBacking.clubName}的主页"></h:outputText></h:outputLink></li>
+                <li>  <h:outputLink value="/ClubUnion/club/#{param['club_id']}/user"><h:outputText value="成员"></h:outputText></h:outputLink></li>
+                <li>  <h:outputLink value="/ClubUnion/club/#{param['club_id']}/document"><h:outputText value="文件"></h:outputText></h:outputLink></li>
+                <li>  <h:outputLink value="/ClubUnion/club/#{param['club_id']}/message"><h:outputText value="留言板"></h:outputText></h:outputLink></li>               
+                <li>  <h:outputLink value="/ClubUnion/club_manager/#{param['club_id']}" rendered="#{ClubHelpBacking.clubManager}"><h:outputText value="管理"></h:outputText></h:outputLink></li>
+                <li>  <h:outputLink value="/ClubUnion/club/#{param['club_id']}/apply"  rendered="#{ClubHelpBacking.visitor}"><h:outputText value="申请加入该组织"></h:outputText></h:outputLink></li>
+                <li>  <h:outputLink value="/ClubUnion/club_manager/#{param['club_id']}/create_document" rendered="#{ClubHelpBacking.clubManager}"><h:outputText value="发表文章"></h:outputText></h:outputLink></li>
+      </ul>
+      </div>
+      </div>
+    
+        </ui:composition>
+	
+	
+	
+</html>
+

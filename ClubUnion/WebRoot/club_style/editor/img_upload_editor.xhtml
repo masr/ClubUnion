@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:my="http://www.clubunion.com"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	<ui:composition>
+	<script>
+	// <![CDATA[ 
+		$("#radio_url").bind("click", function() {
+		if (this.checked) {
+			$("#imgpath").attr("disabled", "");
+			$("#imgfile").attr("disabled", "disabled");
+			$("#radio_file").attr("checked",false);
+		}
+	});
+
+	$("#radio_file").bind("click", function() {
+		if (this.checked) {
+			$("#imgfile").attr("disabled", "");
+			$("#imgpath").attr("disabled", "disabled");
+			$("#radio_url").attr("checked",false);
+		}
+	});
+	// ]]> 
+	</script>
+        <style>
+		#myiframe{display:none}
+		#divProcessing{background-color:blue;width: 200px; height: 30px; position: absolute; left: 85px; top: 75px; display: none}
+		</style>
+
+       <div class="img_uploader">
+		<form name="form1" id="form_1" method="post"
+				enctype="multipart/form-data" target="myiframe" action="#">
+		                   <h3>插入图片</h3>
+		                   
+		                   <input type="radio"  id="radio_url" />
+					图片地址:
+					<input type="text" value="http://"
+					        id="imgpath" name="imgpath"
+						 disabled="disabled" />
+						<br/>
+						
+						
+						<input type="radio" id="radio_file"  checked="true" />
+					上传图片:
+					<input type="file" id="imgfile" name="imgfile"
+						 />
+						 <br/><br/>
+					<button class="submit">
+						确定
+					</button>
+		
+			
+			</form>
+		
+
+		<div id="divProcessing">
+			<table >
+				<tr>
+					<td>
+						图片上传中,请等待...
+					</td>
+				</tr>
+			</table>
+		</div>
+		<iframe name="myiframe" id="myiframe" ></iframe>
+		</div>
+		
+
+	</ui:composition>
+
+</html>
+

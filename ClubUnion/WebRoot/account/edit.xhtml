@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+  <ui:composition template="/WEB-INF/layout.xhtml">
+        <ui:define name="title">首页</ui:define>
+        <ui:define name="main">
+         <div id="account_edit">
+          <div id="sub_header">
+        <ui:include src="sub_header.xhtml"></ui:include>
+        </div>
+                   <div id="container">
+        
+        <h:form id="edit_form">
+         <h:messages globalOnly="true" infoClass="AccountEditError" />
+         <h:panelGrid border="0" columns="3">
+                     <h:outputLabel value="真实姓名" for="realname" />
+                    <h:inputText required="true" id="realname" value="#{AccountEditBacking.realName}" />
+                    <h:message for="realname" />
+
+                     <h:outputLabel value="电子邮箱" for="email" />
+                    <h:inputText required="true" id="eamil" value="#{AccountEditBacking.email}" />
+                    <h:message for="email" />
+                    <h:outputLabel value="个人描述" for="description"></h:outputLabel>
+                    <h:message for="description"></h:message>
+         </h:panelGrid>
+                             <h:inputTextarea id="description" value="#{AccountEditBacking.description}"></h:inputTextarea>
+         
+         
+                  <h:commandButton value="修改" action="#{AccountEditBacking.edit}"></h:commandButton>
+        </h:form>
+        </div>
+        </div>
+        </ui:define>
+        </ui:composition>
+</html>
+
+
+                
+      

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:my="http://www.clubunion.com"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+  <ui:composition template="/WEB-INF/layout.xhtml">
+        <ui:define name="title">首页</ui:define>
+        <ui:define name="main">
+        <div id="sup_user">
+        <h:dataTable value="#{SupUsersBacking.users}" var="user">
+        <my:userListElement user="#{user}" master="user" type="sup" label="所有用户列表"></my:userListElement>
+        </h:dataTable>
+        </div>
+        </ui:define>
+        </ui:composition>
+	
+	
+	
+</html>

@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+
+
+
+body {
+
+
+	font-size: 15px;
+}
+
+#all {
+	background: #fff;
+	overflow: hidden;
+}
+
+#sub_header {
+	font-family: "楷体";
+	font-size: 20px;
+
+}
+
+
+
+
+

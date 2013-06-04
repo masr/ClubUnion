@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+<!-- Use Documents Saved as *.xhtml -->
+ <context-param>
+  <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+  <param-value>.xhtml</param-value>
+ </context-param>
+ <!-- Special Debug Output for Development -->
+ <context-param>
+  <param-name>facelets.DEVELOPMENT</param-name>
+  <param-value>true</param-value>
+ </context-param>
+ <!-- Optional JSF-RI Parameters to Help Debug -->
+ <context-param>
+  <param-name>com.sun.faces.validateXml</param-name>
+  <param-value>true</param-value>
+ </context-param>
+ <context-param>
+  <param-name>com.sun.faces.verifyObjects</param-name>
+  <param-value>true</param-value>
+ </context-param>
+ <!-- The taglib of facelets reused template I defined -->
+ <context-param>
+  <param-name>facelets.LIBRARIES</param-name>
+  <param-value>/WEB-INF/my_facelets_tags/my_tags.taglib.xml</param-value>
+ </context-param>
+ <context-param>
+  <param-name>javax.faces.CONFIG_FILES</param-name>
+  <param-value>/WEB-INF/faces-config.xml,/WEB-INF/url-navigation.xml,/WEB-INF/managed-bean-config.xml</param-value>
+ </context-param>
+ <!-- filter -->
+ <filter>
+  <filter-name>UrlRewriteFilter</filter-name>
+  <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+  <init-param>
+   <param-name>logLevel</param-name>
+   <param-value>WARN</param-value>
+  </init-param>
+ </filter>
+ <filter-mapping>
+  <filter-name>UrlRewriteFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+ </filter-mapping>
+ <!-- servlet -->
+ <servlet>
+  <servlet-name>Faces Servlet</servlet-name>
+  <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+  <load-on-startup>1</load-on-startup>
+ </servlet>
+
+ <servlet>
+  <servlet-name>AttachUpload</servlet-name>
+  <servlet-class>cn.edu.nju.clubunion.servlet.AttachUpload</servlet-class>
+ </servlet>
+  <servlet>
+  <servlet-name>DocumentImageUpload</servlet-name>
+  <servlet-class>cn.edu.nju.clubunion.servlet.DocumentImageUpload</servlet-class>
+ </servlet>
+
+ <servlet>
+
+  <servlet-name>LeftBackImgUpload</servlet-name>
+  <servlet-class>cn.edu.nju.clubunion.servlet.LeftBackImgUpload</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>PageStyleUpload</servlet-name>
+  <servlet-class>cn.edu.nju.clubunion.servlet.PageStyleUpload</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>ContainerStyleUpload</servlet-name>
+  <servlet-class>cn.edu.nju.clubunion.servlet.ContainerStyleUpload</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>LogoUpload</servlet-name>
+  <servlet-class>cn.edu.nju.clubunion.servlet.LogoUpload</servlet-class>
+ </servlet>
+ <servlet>
+  <servlet-name>TopBackImgUpload</servlet-name>
+  <servlet-class>cn.edu.nju.clubunion.servlet.TopBackImgUpload</servlet-class>
+ </servlet>
+
+  <servlet>
+  <servlet-name>MainBackImgUpload</servlet-name>
+  <servlet-class>cn.edu.nju.clubunion.servlet.MainBackImgUpload</servlet-class>
+ </servlet>
+  <servlet>
+    <servlet-name>RightBackImgUpload</servlet-name>
+    <servlet-class>cn.edu.nju.clubunion.servlet.RightBackImgUpload</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ContainerThemeChange</servlet-name>
+    <servlet-class>cn.edu.nju.clubunion.servlet.ContainerThemeChange</servlet-class>
+  </servlet>
+    <servlet>
+    <servlet-name>ImgContentUpload</servlet-name>
+    <servlet-class>cn.edu.nju.clubunion.servlet.ImgContentUpload</servlet-class>
+  </servlet>
+
+
+  <servlet>
+    <servlet-name>GalleryImgUpload</servlet-name>
+    <servlet-class>cn.edu.nju.clubunion.servlet.GalleryImgUpload</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PosterImgUpload</servlet-name>
+    <servlet-class>cn.edu.nju.clubunion.servlet.PosterImgUpload</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+ <servlet-mapping>
+  <servlet-name>Faces Servlet</servlet-name>
+  <url-pattern>*.jsf</url-pattern>
+ </servlet-mapping>
+
+ <servlet-mapping>
+  <servlet-name>AttachUpload</servlet-name>
+  <url-pattern>/servlet/AttachUpload</url-pattern>
+ </servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>DocumentImageUpload</servlet-name>
+  <url-pattern>/servlet/DocumentImageUpload</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>PageStyleUpload</servlet-name>
+  <url-pattern>/servlet/PageStyleUpload</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>ContainerStyleUpload</servlet-name>
+  <url-pattern>/servlet/ContainerStyleUpload</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>LogoUpload</servlet-name>
+  <url-pattern>/servlet/LogoUpload</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>TopBackImgUpload</servlet-name>
+  <url-pattern>/servlet/TopBackImgUpload</url-pattern>
+ </servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>MainBackImgUpload</servlet-name>
+  <url-pattern>/servlet/MainBackImgUpload</url-pattern>
+ </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RightBackImgUpload</servlet-name>
+    <url-pattern>/servlet/RightBackImgUpload</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>LeftBackImgUpload</servlet-name>
+    <url-pattern>/servlet/LeftBackImgUpload</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ContainerThemeChange</servlet-name>
+    <url-pattern>/servlet/ContainerThemeChange</url-pattern>
+  </servlet-mapping>  
+    <servlet-mapping>
+    <servlet-name>ImgContentUpload</servlet-name>
+    <url-pattern>/servlet/ImgContentUpload</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>GalleryImgUpload</servlet-name>
+    <url-pattern>/servlet/GalleryImgUpload</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PosterImgUpload</servlet-name>
+    <url-pattern>/servlet/PosterImgUpload</url-pattern>
+  </servlet-mapping>  
+
+
+ <session-config>
+  <session-timeout>30</session-timeout>
+ </session-config>
+ <welcome-file-list>  
+  <welcome-file>/forward.jsp</welcome-file>
+ </welcome-file-list>
+ <login-config>
+  <auth-method>BASIC</auth-method>
+ </login-config>
+</web-app>

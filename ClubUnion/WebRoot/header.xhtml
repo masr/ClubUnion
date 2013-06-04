@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	<body>
+	<ui:composition>
+	<div class="logo"></div>
+	
+	 <div class="menu">
+				<ul>
+				<li>
+					<h:outputLink value="/ClubUnion/">
+						<h:outputText value="首页"></h:outputText>
+					</h:outputLink>
+				</li>
+				<li>
+				<h:panelGroup rendered="#{!UserBacking.isAdmin}">
+					<h:outputLink value="/ClubUnion/account/" rendered="#{UserBacking.loggedIn}">
+						<h:outputText value="#{UserBacking.realName}的空间"></h:outputText>
+					</h:outputLink>
+					</h:panelGroup>
+				</li>
+				<li>
+					<h:outputLink value="/ClubUnion/club/" rendered="#{!UserBacking.isAdmin}">
+						<h:outputText value="社团" />
+					</h:outputLink>
+				</li>
+				
+				<li>
+					<h:outputLink value="/ClubUnion/letter/" rendered="#{UserBacking.loggedIn}">
+						<h:outputText value="站内信"></h:outputText>
+					</h:outputLink>
+				</li>
+				<li>
+					<h:outputLink value="/ClubUnion/account/login"
+						rendered="#{!UserBacking.loggedIn}">
+						<h:outputText value="登陆"></h:outputText>
+					</h:outputLink>
+				</li>
+				<li>
+					<h:outputLink value="/ClubUnion/account/regist"
+						rendered="#{!UserBacking.loggedIn}">
+						<h:outputText value="注册"></h:outputText>
+					</h:outputLink>
+				</li>
+				<li>
+					<h:outputLink value="/ClubUnion/search/user">
+						<h:outputText value="搜索用户"></h:outputText>
+					</h:outputLink>
+				</li>
+				<li>
+					<h:form rendered="#{!UserBacking.isAdmin}">
+					<h:outputLink value="/ClubUnion/club_create_apply/"
+						rendered="#{UserBacking.loggedIn}">
+						<h:outputText value="申请一个社团"></h:outputText>
+					</h:outputLink>
+					</h:form>
+				</li>
+				<li>
+					<h:outputLink value="/ClubUnion/sup/request" rendered="#{UserBacking.isAdmin}">
+						<h:outputText value="查看申请社团"></h:outputText>
+					</h:outputLink>
+				</li>
+			
+				<li>
+					<h:form rendered="#{UserBacking.loggedIn}">
+						<h:commandLink action="#{UserBacking.logout}">
+							<h:outputText value="登出"></h:outputText>
+						</h:commandLink>
+					</h:form>
+				</li>
+
+				</ul>
+			</div>
+
+ 
+	</ui:composition>
+	</body>
+	
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:my="http://www.clubunion.com"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+  <ui:composition template="/WEB-INF/layout.xhtml">
+        <ui:define name="title">首页</ui:define>
+        <ui:define name="main">
+        <h:form>
+        <h:panelGrid columns="2">
+       <h:outputLabel value="姓名"></h:outputLabel>
+       <<h:outputLink><h:outputText value="#{request.userName}"></h:outputText></h:outputLink>
+      <h:outputLabel value="组织名称"></h:outputLabel> 
+      <h:outputText value="#{request.clubName}"></h:outputText>
+      <h:outputLabel value="描述" value="#{request.description}"></h:outputLabel>
+      <h:commandButton value="同意" action="#{SingleClubCreateRequestBacking.agree}"></h:commandButton>
+      <h:commandButton value="拒绝" action="#{SingleClubCreateRequestBacking.reject}"></h:commandButton>
+       </h:panelGrid>
+       </h:form>
+        </ui:define>
+        </ui:composition>
+	
+</html>

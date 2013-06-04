@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+		 xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+       <ui:composition>
+         <h:column>
+		<f:facet name="header"><h:outputText value="#{label}"></h:outputText></f:facet>
+		 <h:outputLink rendered="#{master}"><h:outputText value="删除"></h:outputText></h:outputLink>
+            <h:outputText value="#{comment.content}" escape="false"></h:outputText>
+              <h:outputLink value="/ClubUnion/profile/#{comment.userId}">  <h:outputText value="#{comment.userName}"></h:outputText></h:outputLink> 
+               <h:outputText value="评论于#{comment.createdAt}"></h:outputText>
+       </h:column>		
+             
+        </ui:composition>
+	
+</html>

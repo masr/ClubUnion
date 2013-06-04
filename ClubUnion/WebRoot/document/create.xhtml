@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	<ui:composition template="/club_style/club_layout.xhtml">
+	<ui:define name="header_content">
+	<style type="text/css">
+	.hidden{display:none}
+	#post_upload{display:none}
+	
+	</style>
+	<script>
+	$(function(){
+	    
+		$("#post_link").bind("click",function(){
+		$("#post_upload").dialog();
+    	      $("#post_upload").bind("dialogclose",function(){
+             $(this).dialog('destroy');    
+    	})
+      return false;
+	})
+	$("#date_picker").datepicker();
+	
+	    
+	  
+	})
+	
+	
+	</script>
+	</ui:define>
+		<ui:define name="main">
+			<div id="document_create">
+			<h:form id="create_form">
+			    <input type="hidden" name="club_id" value="#{param['club_id']}"/>
+
+				<h:outputLabel value="标题" for="title" />
+				<h:inputText required="true" id="title"
+					value="#{DocumentCreateBacking.title}" />
+				<h:message for="title" />
+				<br />
+			
+
+
+				<h:outputLabel value="内容" for="content1"  />
+				<br />
+				<input type="text" style="display:none" name="content1" id="content1" />
+				
+				<iframe src="/ClubUnion/editor/editor.htm?id=content1&amp;ReadCookie=0" frameBorder="0" marginHeight="0" marginWidth="0" scrolling="no"
+					width="621" height="457"></iframe>
+				<h:message for="content1" />
+				<br />
+
+		        
+
+
+				<h:outputLabel value="请选择文件类型" for="document_type" />
+				<br />
+				<h:selectOneMenu id="document_type"
+					value="#{DocumentCreateBacking.documentType}">
+					<f:selectItem itemLabel="通知" itemValue="0" />
+					<f:selectItem itemLabel="公开文件" itemValue="1" />
+					<f:selectItem itemLabel="私密文件" itemValue="2" />
+				</h:selectOneMenu>
+				<br />
+				<br/>
+				<a href="#" id="post_link" style="font-size:20px;">贴一张海报</a>
+			   <div id="post_show">
+			   <img src=""/>
+			   </div>
+			   <input id="poster_url" type="hidden" name="post_url" />
+				
+				<br/><br/><br/>
+				请输入活动日期
+				<input type="text" id="date_picker" name="activityDate" />
+
+				
+				
+				
+				
+				<h:commandButton value="提交"
+					action="#{DocumentCreateBacking.submit}" />
+					</h:form>
+					  <div id="post_upload">
+				
+				<ui:include src="poster_uploader.xhtml"></ui:include>
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>
+</html>

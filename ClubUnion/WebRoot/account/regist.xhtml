@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- 这个好了 -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+  <ui:composition template="/WEB-INF/layout.xhtml">
+        <ui:define name="title">首页</ui:define>
+        <ui:define name="main">
+         <div id="regist">
+          <div id="sub_header">
+        <ui:include src="sub_header.xhtml"></ui:include>
+        </div>
+                   <div id="container">
+        
+             <h:form id="regist_form">
+                <h:messages globalOnly="true" infoClass="Error" />
+                <h:panelGrid width="600px" columns="3" border="0" >
+                    <h:outputLabel value="昵称" for="nick_name" />
+                    <h:inputText required="true" id="nick_name" value="#{RegistBacking.nickName}" />
+                    <h:message for="nick_name" />
+
+                     <h:outputLabel value="真实姓名" for="realname" />
+                    <h:inputText required="true" id="realname" value="#{RegistBacking.realName}" />
+                    <h:message for="realname" />
+
+                     <h:outputLabel value="电子邮箱" for="email" />
+                    <h:inputText required="true" id="eamil" value="#{RegistBacking.email}" />
+                    <h:message for="email" />
+
+                    <h:outputLabel value="密码" for="password" />
+                    <h:inputSecret required="true" id="password" value="#{RegistBacking.password}" />
+                    <h:message for="password" />
+
+                    <h:outputLabel value="请确认密码" for="password_again" />
+                    <h:inputSecret required="true" id="password_again" value="#{RegistBacking.passwordAgain}"/>
+                    <h:message for="password_again" />
+                    
+                        <h:outputLabel value="自我描述" for="description" />
+                     <h:inputTextarea value="#{RegistBacking.description}" cols="20" rows="4" ></h:inputTextarea>
+                    <h:message for="description" />
+
+                </h:panelGrid>
+                 <br/>
+                 
+                  
+                    <h:commandButton value="注册" action="#{RegistBacking.regist}" />
+                    <h:commandButton value="取消" action="cancel" immediate="true" />
+             
+        </h:form>   
+        </div>
+                </div>
+        </ui:define>
+        </ui:composition>
+	
+	
+	
+</html>
+
+
+           
+  

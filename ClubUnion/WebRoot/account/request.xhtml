@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:my="http://www.clubunion.com"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+  <ui:composition template="/WEB-INF/layout.xhtml">
+        <ui:define name="title">首页</ui:define>
+        <ui:define name="main">
+        <div id="account_requests"> <div id="sub_header">
+        <ui:include src="sub_header.xhtml"></ui:include>
+        </div>
+                   <div id="container">
+        
+         <div class="request_list">
+           <div class="club_invite_list">
+           
+           <h:dataTable value="#{AccountRequestBacking.clubInvitedRequests}" var="singleRequest">
+          <my:requestListElement singleRequest="#{singleRequest}"  label="您收到的社团邀请" ></my:requestListElement>
+           
+           </h:dataTable>
+           </div>
+            <div class="friend_apply_list">
+             <h:dataTable value="#{AccountRequestBacking.friendApplyRequests}" var="singleRequest">
+          <my:requestListElement  singleRequest="#{singleRequest}" label="您收到的好友申请" ></my:requestListElement>
+        
+           </h:dataTable>
+           </div>
+           </div>
+           </div>
+           </div>
+        </ui:define>
+        </ui:composition>
+	
+</html>
+

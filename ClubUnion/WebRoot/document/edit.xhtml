@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+  <ui:composition template="/club_style/club_layout.xhtml">
+        <ui:define name="title">首页</ui:define>
+        <ui:define name="header_content"><style type="text/css">.hidden{display:none}</style></ui:define>
+        <ui:define name="main">
+         <div id="document_edit">
+             <h:form>
+
+                    <h:outputLabel value="标题" for="title" />
+                    <h:inputText required="true" id="title" value="#{DocumentShowBacking.title}" />
+                    <h:message for="title" />
+                    <br/>
+                   
+                     <h:outputLabel value="内容" for="content1" />
+                                         <h:message for="content1" />
+                                         <br/>
+                     <input type="text"  id="content1" value="#{DocumentShowBacking.content}" class="hidden"/>
+                     <iframe src="/ClubUnion/editor/editor.htm?id=content1&amp;ReadCookie=0" frameBorder="0" marginHeight="0" marginWidth="0" scrolling="no" width="621" height="457"></iframe>
+                                             <br/>
+
+
+
+    <h:outputLabel value="请选择文件类型" for="document_type" />
+    <br/>
+    <h:selectOneMenu id="document_type" value="#{DocumentShowBacking.documentType}" >
+                        <f:selectItem itemLabel="通知" itemValue="1" />
+                        <f:selectItem itemLabel="公开文件" itemValue="2" />
+                        <f:selectItem itemLabel="私密文件" itemValue="3" />
+                    </h:selectOneMenu>
+                    <br/>
+                    <h:commandButton value="提交" action="#{DocumentEditBacking.submit}" />
+               </h:form>
+               </div>
+        </ui:define>
+        </ui:composition>
+	
+	
+	
+</html>
+
+
+
+
+          

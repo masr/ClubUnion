@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:my="http://www.clubunion.com"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+
+	<ui:composition template="/club_style/club_layout.xhtml">
+		<ui:define name="title">首页</ui:define>
+		<ui:define name="header_content">
+			<style>
+.title {
+	font-size: 26px;
+	color: blue;
+}
+
+.sub {
+	font-size: 20px;
+	color: blue;
+}
+
+
+</style>
+
+		</ui:define>
+		<ui:define name="main">
+			<div id="document_show">
+				<div class="document">
+
+                   <h1>#{DocumentShowBacking.title}</h1>
+				<h:outputLink rendered="#{ClubHelpBacking.clubManager}" value="/ClubUnion/club/#{param['club_id']}/document/#{param['document_id']}/edit"><h:outputText value="编辑"></h:outputText></h:outputLink>
+					<br />
+					<br />
+					<br />
+				
+
+
+					<h:outputLabel styleClass="sub" value="内容" for="content1" />
+
+					<br />
+					<p>
+						<h:outputText id="content1" value="#{DocumentShowBacking.content}"
+							escape="false" />
+					</p>
+
+					
+					<br />
+
+					<h3 class="sub">
+						海报
+					</h3>
+					<br />
+					
+					<img src="#{DocumentShowBacking.posterURL}" />
+				</div>
+				<br />
+				<br />
+				<br />
+				<br />
+				<br />
+				<div class="comment_list">
+					<h:dataTable value="#{DocumentShowBacking.comments}" var="comment">
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="评论"></h:outputText>
+							</f:facet>
+							<div class="comment_block">
+							<my:commentListElement comment="#{comment}"></my:commentListElement>
+							<hr/>
+							</div>
+						</h:column>
+					</h:dataTable>
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>
+
+
+
+</html>
+
+
+

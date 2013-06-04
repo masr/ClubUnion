@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+			xmlns:my="http://www.clubunion.com"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+        <ui:composition>
+        <script>
+        $(function(){
+           $("#document_list").tabs();
+        })
+        </script>
+        <div id="document_block">
+          <div class="design_title" >#{container.title}</div>
+        <div class="design_content">
+ <div id="document_list">
+ <ul>
+					<li id="link_to_notices"><a href="#notices">活动通知</a></li>
+					<li id="link_to_public_public_documents"><a href="#public_documents">公开文件</a></li>
+					<li id="link_to_private_documents"><a href="#private_documents">私密文件</a></li>
+				</ul>
+
+             <div id="notices">
+        <h:dataTable value="#{ClubDocumentBacking.notices}" var="notice">
+ 
+        <my:documentListElement document="#{notice}" ></my:documentListElement>
+       
+        </h:dataTable>
+       </div>
+       
+
+         <div id="public_documents">
+             <h:dataTable value="#{ClubDocumentBacking.publicDocuments}" var="document">
+       
+        <my:documentListElement document="#{document}" ></my:documentListElement>
+       
+        </h:dataTable>
+        </div>
+        
+
+        
+          <div id="private_documents">
+             <h:dataTable value="#{ClubDocumentBacking.privateDocuments}" var="document" rendered="#{!ClubHelpBacking.visitor}">
+       
+        <my:documentListElement document="#{document}" ></my:documentListElement>
+      
+        </h:dataTable>
+        </div>
+        </div>      </div>
+      
+      </div>
+        </ui:composition>
+	
+	
+	
+</html>

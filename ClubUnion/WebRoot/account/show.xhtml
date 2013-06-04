@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:my="http://www.clubunion.com"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+  <ui:composition template="/WEB-INF/layout.xhtml">
+        <ui:define name="title">首页</ui:define>
+        <ui:define name="main">
+        <div id="account_show">
+         <div id="sub_header">
+        <ui:include src="sub_header.xhtml"></ui:include>
+        </div>
+                   <div id="container">
+        
+          <div class="clubs_list">
+           <div class="managed_clubs">
+             <h:dataTable value="#{UserShowBacking.managedClubs}" var="club">
+							
+								<my:clubListElement club="#{club}" label="#{UserShowBacking.realName}掌管的社团"></my:clubListElement>
+						
+						</h:dataTable>
+             </div>
+              <div class="joined_clubs">
+                <h:dataTable value="#{UserShowBacking.joinedClubs}" var="club">
+						
+								<my:clubListElement club="#{club}" label="#{UserShowBacking.realName}参加的社团"></my:clubListElement>
+						</h:dataTable>
+             </div>
+        
+            
+             </div>
+               <div class="documents_list">
+                <h:dataTable value="#{UserShowBacking.currentDocuments}" var="document">
+   
+     </h:dataTable>  
+             </div>
+             <div class="info">
+              <h:panelGrid border="0" columns="2">
+              
+              <h:outputText value="姓名"></h:outputText>
+              <h:outputText value="#{UserShowBacking.realName}"></h:outputText>
+              
+               <h:outputText value="邮箱"></h:outputText>
+              <h:outputText value="#{UserShowBacking.email}"></h:outputText>
+              
+              <h:outputText value="个人描述"></h:outputText>
+              <h:outputText value="#{UserShowBacking.description}"></h:outputText>
+              
+              </h:panelGrid>
+             </div>
+             </div>
+             </div>
+        </ui:define>
+        </ui:composition>
+	
+	
+	
+</html>
+

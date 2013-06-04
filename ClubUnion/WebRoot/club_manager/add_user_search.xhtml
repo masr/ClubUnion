@@ -1,0 +1,53 @@
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:ui="http://java.sun.com/jsf/facelets" 
+xmlns:h="http://java.sun.com/jsf/html" 
+xmlns:f="http://java.sun.com/jsf/core" 	
+xmlns:my="http://clubunion.com"
+xml:lang="en" lang="en">
+	
+  <ui:composition template="/WEB-INF/layout.xhtml">
+        <ui:define name="title">首页</ui:define>
+          <ui:define name="header_content">
+        <link rel="stylesheet" href="/ClubUnion/css/club/default.css"/>
+        </ui:define>
+        <ui:define name="main">
+        <div id="club_add_user_search">
+       
+        <ui:include src="/club_style/block/sub_header.xhtml"></ui:include>
+    
+      
+        <ui:include src="side_bar.xhtml"></ui:include>
+       
+                   <div id="container">
+        
+          <h:form id="search_form">
+
+                <h:panelGrid width="600px" columns="3" border="0" >
+                    <h:outputLabel value="昵称" for="nick_name" />
+                    <h:inputText required="true" id="nick_name" value="#{ClubAddUserSearchBacking.nickName}" />
+                    <h:message for="nick_name" />
+
+                     <h:outputLabel value="真实姓名" for="realname" />
+                    <h:inputText required="true" id="realname" value="#{ClubAddUserSearchBacking.realName}" />
+                    <h:message for="realname" />
+
+                     <h:outputLabel value="id号" for="user_id" />
+                    <h:inputText required="true" id="user_id" value="#{ClubAddUserSearchBacking.userId}" />
+                    <h:message for="user_id" />
+                </h:panelGrid>
+
+                    <h:commandButton value="查询" action="#{ClubAddUserSearchBacking.search}" />
+             
+        </h:form>   
+        </div>
+        </div>
+        </ui:define>
+        </ui:composition>
+	
+	
+	
+</html>
+

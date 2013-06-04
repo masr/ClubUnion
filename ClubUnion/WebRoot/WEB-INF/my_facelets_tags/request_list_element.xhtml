@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+
+	<ui:composition>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="#{label}"></h:outputText>
+			</f:facet>
+			<h:panelGroup rendered="#{singleRequest!=null}">
+				<h:form>
+					<h:panelGroup rendered="#{singleRequest.requestType==1}">
+						<!-- 1为好友申请 -->
+						<h:outputLink value="/ClubUnion/profile/#{singleRequest.senderId}">
+							<h:outputText value="#{singleRequest.senderName}"></h:outputText>
+						</h:outputLink>
+						<h:outputText value="请求加您为好友"></h:outputText>
+						<h:panelGroup rendered="#{ ! singleRequest.processed}">
+							<input type="hidden" value="#{singleRequest.id}" name="id" />
+							<input type="hidden" value="1" name="type" />
+							<h:commandButton value="同意" action="#{SuperRequestBacking.approveRequest}" />
+							<h:commandButton value="拒绝" action="#{SuperRequestBacking.refuseRequest}" />
+							<h:commandButton value="删除" action="#{SuperRequestBacking.deleteRequest}" />
+						</h:panelGroup>
+					</h:panelGroup>
+				</h:form>
+			</h:panelGroup>
+			<h:form>
+				<h:panelGroup rendered="#{singleRequest.requestType==2}">
+					<!-- 2为社团邀请 -->
+					<h:outputLink value="/ClubUnion/club/#{singleRequest.senderId}">
+						<h:outputText value="#{singleRequest.senderName}"></h:outputText>
+					</h:outputLink>
+					<h:outputText value="请求加您为社团成员"></h:outputText>
+					<h:panelGroup rendered="#{! singleRequest.processed}">
+						<input type="hidden" value="#{singleRequest.id}" name="id" />
+						<input type="hidden" value="2" name="type" />
+						<h:commandButton value="同意" action="#{SuperRequestBacking.approveRequest}" />
+						<h:commandButton value="拒绝" action="#{SuperRequestBacking.refuseRequest}" />
+						<h:commandButton value="删除" action="#{SuperRequestBacking.deleteRequest}" />
+					</h:panelGroup>
+				</h:panelGroup>
+			</h:form>
+			<h:form>
+				<h:panelGroup rendered="#{singleRequest.requestType==0}">
+					<!-- 0为社团创建申请 -->
+					<h:outputLink value="/ClubUnion/profile/#{singleRequest.senderId}">
+						<h:outputText value="#{singleRequest.senderName}"></h:outputText>
+					</h:outputLink>
+					<h:outputText value="请求创建一个社团:#{singleRequest.clubName}"></h:outputText>
+					<h:panelGroup rendered="#{! singleRequest.processed}">
+						<input type="hidden" value="#{singleRequest.id}" name="id" />
+						<input type="hidden" value="0" name="type" />
+						<h:commandButton value="同意" action="#{SuperRequestBacking.approveRequest}" />
+						<h:commandButton value="拒绝" action="#{SuperRequestBacking.refuseRequest}" />
+						<h:commandButton value="删除" action="#{SuperRequestBacking.deleteRequest}" />
+					
+
+					</h:panelGroup>
+				</h:panelGroup>
+			</h:form>
+			<h:form>
+				<h:panelGroup rendered="#{singleRequest.requestType==3}">
+					<!-- 3为用户申请加入社团的申请   -->
+					<h:outputLink value="/ClubUnion/profile/#{singleRequest.senderId}">
+						<h:outputText value="#{singleRequest.senderName}"></h:outputText>
+					</h:outputLink>
+					<h:outputText value="申请加入#{singleRequest.receiverName}"></h:outputText>
+					<h:panelGroup rendered="#{! singleRequest.processed}">
+						<input type="hidden" value="#{singleRequest.id}" name="id" />
+						<input type="hidden" value="3" name="type" />
+						<h:commandButton value="同意" action="#{SuperRequestBacking.approveRequest}" />
+						<h:commandButton value="拒绝" action="#{SuperRequestBacking.refuseRequest}" />
+						<h:commandButton value="删除" action="#{SuperRequestBacking.deleteRequest}" />
+					</h:panelGroup>
+				</h:panelGroup>
+				<h:panelGroup styleClass="blank_request"
+					rendered="#{singleRequest==null}">
+					<h:outputText value="请求为空"></h:outputText>
+				</h:panelGroup>
+			</h:form>
+		</h:column>
+	</ui:composition>
+</html>
+

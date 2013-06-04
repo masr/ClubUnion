@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	     
+  <ui:composition template="/WEB-INF/layout.xhtml">
+        <ui:define name="title">首页</ui:define>
+        <ui:define name="main">
+                    <div id="login">
+                     <div id="sub_header">
+        <ui:include src="sub_header.xhtml"></ui:include>
+        </div>
+                   <div id="container">
+        
+                    <h:form id="login_form">
+              <h:panelGrid width="600px" columns="3" border="0" >
+                     <h:outputLabel value="邮箱" for="email" />
+                    <h:inputText required="true" id="email" value="#{LoginBacking.email}" />
+                    <h:message for="email" />
+                       <h:outputLabel value="密码" for="password" />
+                    <h:inputSecret required="true" id="password" value="#{LoginBacking.password}" />
+                    <h:message for="password" />
+                     <h:commandButton value="登录" action="#{LoginBacking.login}" />
+                    <h:commandButton value="取消" action="cancel" immediate="true" />
+              </h:panelGrid>
+        </h:form>
+       </div>
+     </div>
+        </ui:define> 
+        </ui:composition>
+	
+</html>
+
+

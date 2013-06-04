@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+
+	<ui:composition>
+		<h:column>
+		<div id="friend">
+		<h:form>
+			<f:facet name="header">
+				<h:outputText value="#{label}" styleClass="column_header"></h:outputText>
+			</f:facet>
+				<h:panelGroup rendered="#{type=='0'}">
+					<!-- 0为用户好友列表 -->
+					<h:outputLink value="/ClubUnion/profile/#{friend.id}">
+						<h:outputText value="#{friend.realName}"></h:outputText>
+					</h:outputLink>
+					<h:panelGroup rendered="#{master}">
+						<input type="hidden" value="#{friend.id}" name="id" />
+					<h:commandButton value="删除好友 " action="#{delete.deleteFriend}"/>
+					</h:panelGroup>
+				</h:panelGroup>
+			</h:form>
+			</div>
+			<h:panelGroup rendered="#{type=='1'}">
+				<!-- 1为社团添加用户为成员的搜索结果列表 -->
+				<h:outputLink value="/ClubUnion/profile/#{user.id}">
+					<h:outputText value="#{user.realName}"></h:outputText>
+				</h:outputLink>
+				<h:outputLink value="">
+					<h:outputText value="邀请"></h:outputText>
+				</h:outputLink>
+			</h:panelGroup>
+
+			<h:panelGroup rendered="#{type=='2'}">
+				<!-- 用户搜索用户列表 -->
+				<h:outputLink value="/ClubUnion/profile/#{user.id}">
+					<h:outputText value="#{user.realName}"></h:outputText>
+				</h:outputLink>
+				<h:outputLink value="">
+					<h:outputText value="添加为好友"></h:outputText>
+				</h:outputLink>
+			</h:panelGroup>
+
+			<h:panelGroup rendered="#{type=='3'}">
+				<!-- 终极管理员查看用户列表 -->
+				<h:outputLink value="/ClubUnion/profile/#{user.id}">
+					<h:outputText value="#{user.realName}"></h:outputText>
+				</h:outputLink>
+				<h:outputLink value="">
+					<h:outputText value="删除"></h:outputText>
+				</h:outputLink>
+			</h:panelGroup>
+
+			<h:panelGroup rendered="#{type=='4'}">
+				<!-- 社团管理员查看用户列表 -->
+				<h:outputLink value="profile/#{user.id}">
+					<h:outputText value="#{user.realName}"></h:outputText>
+				</h:outputLink>
+				<h:outputLink value="">
+					<h:outputText value="删除"></h:outputText>
+				</h:outputLink>
+			</h:panelGroup>
+
+			<h:panelGroup rendered="#{type=='5'}">
+				<!-- 社团管理员查看用户列表 -->
+				<h:outputLink value="profile/#{user.id}">
+					<h:outputText value="#{user.realName}"></h:outputText>
+				</h:outputLink>
+
+			</h:panelGroup>
+
+		</h:column>
+
+
+	</ui:composition>
+
+</html>
+

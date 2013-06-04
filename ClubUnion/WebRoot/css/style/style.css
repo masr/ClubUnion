@@ -1,0 +1,44 @@
+
+BODY {
+	BACKGROUND: url(page_back.gif) #fbfbf2 fixed repeat-x;
+	 COLOR: #676767; font-size:17px;
+	 
+}
+
+
+
+#header{background: url(content_back.gif) #fff repeat-x;}
+
+
+
+#header .logo{background:white url('logo.jpg') no-repeat}
+#header .menu { font-size:20px ;font-family:'楷体'; }
+
+#header .menu a:hover{color:white;}
+
+	#footer a{font-size:18px;color:blue;}
+
+
+a:link {
+	COLOR: #909528; TEXT-DECORATION: none
+}
+a:visited {
+	COLOR: #909528;  TEXT-DECORATION: none
+}
+a:hover {
+	COLOR: #646729; TEXT-DECORATION: underline
+}
+a:active {
+	COLOR: #646729; TEXT-DECORATION: underline
+}
+
+input,textarea{border: solid 1px blue;}
+
+P {
+
+	text-indent:2em;
+}
+
+li { list-style: none; }
+
+input,textarea{margin:6px}

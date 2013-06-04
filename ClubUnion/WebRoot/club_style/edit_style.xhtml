@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:my="http://www.clubunion.com"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+
+	<ui:composition template="club_layout.xhtml">
+		<ui:define name="title">首页</ui:define>
+		<ui:define name="sub_header"></ui:define>
+		<ui:define name="header_content">
+				<link type="text/css" href="/ClubUnion/css/test.css" rel="Stylesheet" />
+			<link type="text/css" href="/ClubUnion/css/palette.css" rel="Stylesheet" />
+			<link type="text/css" href="/ClubUnion/css/slide_view.css" rel="Stylesheet" />
+			<link type="text/css" href="/ClubUnion/css/club/default.css" class="club" rel="Stylesheet" />
+			<link type="text/css" href="/ClubUnion/css/club/style.css" class="club" rel="Stylesheet" />
+					
+			<link type="text/css" href="/ClubUnion/css/club/design.css" class="club" rel="Stylesheet" />
+		
+			<script type="text/javascript" src="/ClubUnion/js/tool_kit/structure.js"> </script>
+			<script type="text/javascript" src="/ClubUnion/js/tool_kit/ajax_action.js">  </script>
+			<script type="text/javascript" src="/ClubUnion/js/tool_kit/event_init/event_init.js">  </script>
+			<script type="text/javascript" src="/ClubUnion/js/tool_kit/event_init/color_event_init.js">  </script>
+			<script type="text/javascript" src="/ClubUnion/js/tool_kit/event_init/repeat_event_init.js">  </script>
+			<script type="text/javascript" src="/ClubUnion/js/tool_kit/event_init/other_event_init.js">  </script>
+			<script type="text/javascript" src="/ClubUnion/js/tool_kit/event_init/size_event_init.js">  </script>
+			<script type="text/javascript" src="/ClubUnion/js/tool_kit/event_init/upload_event_init.js">  </script>
+			<script type="text/javascript" src="/ClubUnion/js/tool_kit/event_init/design_event_init.js">  </script>
+			
+			<script type="text/javascript" src="/ClubUnion/js/tool_kit/helper.js">  </script>
+			<script type="text/javascript" src="/ClubUnion/js/tool_kit/upload_response.js">  </script>
+			<script type="text/javascript" src="/ClubUnion/js/jquery-ui-1.7.2.custom/js/slide_view.js">  </script>
+						<script type="text/javascript" src="/ClubUnion/js/magic_control.js">  </script>
+			
+			<script type="text/javascript" src="/ClubUnion/js/style_fixer.js">  </script>
+			<script type="text/javascript" src="/ClubUnion/js/tool_kit/palette.js">  </script>
+			<script type="text/javascript" src="/ClubUnion/js/jquery-ui-1.7.2.custom/js/theme_switcher.js"> </script>
+
+		
+			      <script>
+				// <![CDATA[ 
+				$(function(){
+			 StyleFixer.initPageTheme();
+
+			 });
+			 // ]]> 
+			 </script>
+			
+		
+             <style>
+             
+#tool_kit {
+	width: 270px;
+	height: 700px;
+	float: left;
+	background: orange;
+	font-size:12px;
+}
+
+#bg {
+	float: left;
+}
+
+#page {
+	width: 1600px;
+}
+
+	       			<c:set value="#{ClubStyleBacking.clubStyle}" var="style"></c:set>
+	       	
+   .design{border-width:#{style.borderSolid};border-color:#{style.borderColor}}
+  
+	    .design .design_title{color:#{style.titleColor}}
+	   
+		
+	    
+</style>
+
+
+		</ui:define>
+		
+		<ui:define name="outer">
+			
+				<ui:include src="tool_kit.xhtml">
+				</ui:include>
+			
+		</ui:define>
+		
+
+
+		<ui:define name="main">
+
+			<div id="club_style_edit">
+	
+     
+
+					<c:forEach items="#{ClubStyleBacking.containers}" var="container" varStatus="status">
+					
+					<script>
+				// <![CDATA[ 
+	       
+        	
+        		
+			 $(function() {
+			 
+        		if (TKH.isAlpha("#{container.themeName}"))
+        		 {
+        		
+        		 $.ajax({
+   url: "/ClubUnion/servlet/ContainerThemeChange?selector_id=theme_container_#{status.index}&theme_name=#{container.themeName}",
+   dataType: "html",
+   success:function(source){$("head").append($("<style>"+source+"</style>"));}
+     });
+                }
+	      widgets[#{status.index}]=new Widget(#{container.id})
+	      widgets[#{status.index}].contentType=#{container.contentType}
+	      var container=$("#container_#{status.index}");
+	      var cssOption={
+	      "border-width":"#{container.borderSolid}",
+	      "border-color":"#{container.borderColor}",
+	      "font-size":"#{container.fontSize}",
+	      "font-family":"#{container.fontFamily}",
+	      "width":"#{container.w}",
+	      "height":"#{container.h}",
+	      "left":"#{container.x}",
+	      "top":"#{container.y}",
+	      "position":"absolute",
+	      "overflow":"hidden",
+	     
+	      }
+	      container.css(cssOption);
+	      container.find(".design_content *").not("a").css("color","#{container.fontColor}");
+	      container.find("a").css("color","#{container.linkColor}");
+	      titleCssOption={
+	      "color":"#{container.titleColor}",
+	      "font-family":"#{container.titleFontFamily}"
+	      }
+	      
+	      $(".design_title",container).css(titleCssOption);
+	      
+	});
+	
+	// ]]> 
+			</script>
+					<div id="theme_container_#{status.index}">
+					
+				<div class="design"  id="container_#{status.index}">
+           
+							<my:clubBlock container="#{container}" index="#{status.index}"></my:clubBlock>
+			
+		
+		
+						</div></div>
+						
+					</c:forEach>
+					
+					
+				</div>
+            <script>
+				// <![CDATA[ 
+				$(function(){
+			StyleFixer.adjustFontStyle();
+			 StyleFixer.adjustHeight();
+			 StyleFixer.adjustImgStyle();
+			 $(".svw").slideView();
+			 Gallery.rollAllGallery();
+			 
+			 });
+			 // ]]> 
+			 </script>
+
+		
+		
+			 
+	
+		
+		</ui:define>
+	</ui:composition>
+
+</html>
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+  <ui:composition template="/WEB-INF/layout.xhtml">
+        <ui:define name="title">首页</ui:define>
+          <ui:define name="header_content">
+        <link rel="stylesheet" href="/ClubUnion/css/club/default.css"/>
+        </ui:define>
+        <ui:define name="main">
+        <div id="club_edit">
+       
+        <ui:include src="/club_style/block/sub_header.xhtml"></ui:include>
+  
+   
+        <ui:include src="side_bar.xhtml"> </ui:include>
+                   <div id="container">
+        
+        <h:form id="edit_form">
+
+         <h:panelGrid border="0" columns="3">
+          <h:outputLabel value="组织名称" for="club_name" />
+                    <h:inputText required="true" id="club_name" value="#{ClubEditBacking.clubName}" />
+                    <h:message for="club_name" />
+
+                     <h:outputLabel value="描述" for="description" />
+                    <h:inputTextarea required="true" id="description" value="#{ClubEditBacking.description}" />
+                    <h:message for="description" />
+         </h:panelGrid>
+         <h:commandButton action="#{ClubEditBacking.edit}" value="修改"></h:commandButton>
+        </h:form>
+        </div>
+        </div>
+        
+       
+        </ui:define>
+        </ui:composition>
+	
+	
+	
+</html>
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:my="http://www.clubunion.com"
+	xml:lang="en" lang="en">
+	
+  <ui:composition template="/WEB-INF/layout.xhtml">
+        <ui:define name="title">首页</ui:define>
+        <ui:define name="main">
+            <div id="account_index">
+             <div id="sub_header">
+            <ui:include src="sub_header.xhtml"></ui:include>
+             </div>
+                        <div id="container">
+             
+             <div class="club_list">
+             <div class="managed_clubs">
+             <h:dataTable value="#{AccountIndexBacking.managedClubs}" var="club">
+							
+								<my:clubListElement club="#{club}" label="您掌管的社团"></my:clubListElement>
+						
+						</h:dataTable>
+             </div>
+              <div class="joined_clubs">
+                <h:dataTable value="#{AccountIndexBacking.joinedClubs}" var="club">
+						
+								<my:clubListElement club="#{club}" label="您参加的社团"></my:clubListElement>
+						</h:dataTable>
+             </div>
+              <div class="cared_clubs">
+                 <h:dataTable value="#{AccountIndexBacking.caredClubs}" var="club">
+							
+								<my:clubListElement club="#{club}" label="您关注的社团"></my:clubListElement>
+						</h:dataTable>
+             </div>
+             </div>
+             
+             <div class="request_list">
+             <h:dataTable value="#{AccountIndexBacking.unsovledRequests}" var="singleRequest">
+             <my:requestListElement request="#{singleRequest}" label="您的请求" />
+         </h:dataTable>
+             </div>
+             <div class="document_list">
+             <h:dataTable value="#{AccountIndexBacking.currentDocuments}" var="document">
+   
+     <my:documentListElement document="#{document}" label="最近的文件"></my:documentListElement>
+    
+     </h:dataTable>     
+
+             </div>
+             </div>
+            </div>
+        </ui:define>
+        </ui:composition>
+	
+	
+	
+</html>
+

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:my="http://www.clubunion.com"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	<ui:composition>
+
+<script>
+				// <![CDATA[
+				 
+  $(function(){
+       chk_imgpath=function(){
+		
+			if ($('#radio_url').get(0).checked == true) {
+				if ($("#imgpath").attr("value") == "http://"
+						|| $("#imgpath").attr("value") == "") {
+
+					window.close();
+					return;
+				}
+               } else {
+				if ($("#imgfile").attr("value") == "") {
+					window.close();
+					return;
+				}
+				// LoadIMG($("imgfile").value);
+
+				var pos = ($("#imgfile").attr("value")).lastIndexOf(".");
+				var lastname = ($("#imgfile").attr("value")).substring(pos, $(
+						'#imgfile').attr("value").length);
+				if (lastname.toLowerCase() != ".jpg"
+						&& lastname.toLowerCase() != ".gif"
+						&& lastname.toLowerCase() != ".bmp"
+						&& lastname.toLowerCase() != ".png") {
+					alert('文件类型错误！请选择图片类型的文件！');
+					return false;
+				}
+
+				$('#divProcessing').show();
+				$("#form_1").attr(
+						"action",
+						"/ClubUnion/servlet/PosterImgUpload");
+				$("#form_1").submit();
+
+			}
+		}
+     PosterUploader.LoadPosterIMG=function(url){
+
+    $("#post_upload").dialog("destroy");
+    $('#divProcessing').hide();
+    $("#poster_url").val(url);
+   $("#post_show img").attr('src',url);
+       }
+       
+       $(".img_uploader button.submit").unbind("click").bind("click",chk_imgpath)
+     
+  })
+   
+
+
+            			 // ]]> 
+            
+</script>
+  <ui:include src="/club_style/editor/img_upload_editor.xhtml"></ui:include>
+	
+			
+
+		
+	</ui:composition>
+
+</html>
+

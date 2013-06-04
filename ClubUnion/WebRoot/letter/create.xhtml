@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+  <ui:composition template="/WEB-INF/layout.xhtml">
+        <ui:define name="title">首页</ui:define>
+        <ui:define name="main">
+         <div id="create_letter">
+              <h:form>
+
+                <h:panelGrid width="600px" columns="3" border="0" >
+                    <h:outputLabel value=" 标题" for="title" />
+                    <h:inputText required="true" id="title" value="#{LetterCreateBacking.title}" />
+                    <h:message for="title" />
+
+                     <h:outputLabel value="寄给个人" for="to_person" />
+                    <h:inputText  id="to_person" value="#{LetterCreateBacking.toPersonId}" />
+                    <h:message for="to_person" />
+
+                     <h:outputLabel value="寄给组织" for="to_club" />
+                    <h:inputText id="to_club" value="#{LetterCreateBacking.toClubId}" />
+                    <h:message for="to_club" />
+
+                    <h:outputLabel value="内容" for="content" />
+                    <h:inputTextarea required="true" id="content" value="#{LetterCreateBacking.content}" />
+                    <h:message for="content" />
+
+                </h:panelGrid>
+
+                    <h:commandButton value="送信" action="#{LetterCreateBacking.send}" />
+                  
+        </h:form>   
+    </div>
+        </ui:define>
+        </ui:composition>
+	
+</html>
+
+            
+
+

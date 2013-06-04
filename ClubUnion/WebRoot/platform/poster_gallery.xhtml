@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:my="http://www.clubunion.com"
+			xmlns:c="http://java.sun.com/jstl/core"
+	
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+	<head>
+	<base href="#{HelperBacking.baseURL}" />
+	 <link type="text/css" href="/ClubUnion/css/gallery_wall.css" rel="Stylesheet" />
+
+
+
+ <script type="text/javascript" src="/ClubUnion/js/jquery-ui-1.7.2.custom/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="/ClubUnion/js/gallery_wall.js">
+</script>
+<script>
+$(function(){
+
+   $("img").bind("dblclick",function(){
+   window.open($(this).attr("title"));
+   return false;
+   })
+})
+
+</script>
+	</head>
+ <body>
+           <div id="platform_poster_gallery">
+ 
+ <div id="screen"></div>
+<div id="bankImages">
+ <c:forEach items="#{PosterBacking.posters}" var="poster">
+
+   <a href="#" ><img title="document/show.jsf?document_id=#{poster.documentId}" src="#{poster.posterURL}" /> </a>
+    </c:forEach>
+
+</div>
+
+       
+    
+          
+          </div>
+          <script type="text/javascript">
+    onresize = tv.resize;
+    tv.init();
+</script>
+       
+        
+	
+	</body>
+	
+</html>
+
+          
+

@@ -1,0 +1,37 @@
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:ui="http://java.sun.com/jsf/facelets" 
+xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:my="http://clubunion.com"
+
+xmlns:f="http://java.sun.com/jsf/core" 
+xml:lang="en" lang="en">
+	
+  <ui:composition template="/WEB-INF/layout.xhtml">
+        <ui:define name="title">首页</ui:define>
+        <ui:define name="header_content">
+        <link rel="stylesheet" href="/ClubUnion/css/club/default.css"/>
+        </ui:define>
+        <ui:define name="main">
+          <div id="club_add_user_search">
+           
+        <ui:include src="/club_style/block/sub_header.xhtml"></ui:include>
+        
+        
+        <ui:include src="side_bar.xhtml"></ui:include>
+      
+           <div id="container">
+         <h:dataTable value="#{AddUserResultsBacking.users}" var="user">
+        
+         <my:userListElement type="1" user="#{user}" label="搜索结果列表"></my:userListElement>
+        
+         </h:dataTable>
+          </div>
+          </div>
+        </ui:define>
+        </ui:composition>
+	
+</html>
+

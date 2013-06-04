@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:my="http://www.clubunion.com"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+  <ui:composition >
+  <script type="text/javascript" src="/ClubUnion/js/layout.js">
+  
+  </script>
+       
+          <div id="document_calendar">
+          <div class="notices">
+						<h:dataTable value="#{CalendarBacking.notices}" var="notice">
+                       <my:linkColumn label="活动日历" link="/ClubUnion/club/#{notice.clubId}/document/#{notice.id}" content="#{notice.title}"></my:linkColumn>
+						</h:dataTable>
+
+					</div>
+          
+          </div>
+       
+        </ui:composition>
+	
+	
+	
+</html>
+
+          
+

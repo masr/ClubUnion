@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:my="http://www.clubunion.com"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+  <ui:composition template="/WEB-INF/layout.xhtml">
+        <ui:define name="title">首页</ui:define>
+        <ui:define name="main">
+        <div id="sent_letter">
+        	<h:form id="letter_form">
+        				<h:outputLink value="letter/create"><h:outputText value="写信"></h:outputText></h:outputLink>
+			<h:outputLink value="/ClubUnion/letter/"><h:outputText value="收信箱"></h:outputText></h:outputLink>
+				<h:dataTable value="#{SentLetterBacking.letters}" var="letter">
+                   <h:column>
+                   <f:facet name="header"><h:outputText value="选择"></h:outputText></f:facet>
+                   <h:selectBooleanCheckbox value="#{letter.selected}"></h:selectBooleanCheckbox>
+                   <f:facet name="footer"><h:commandButton value="删除" action="#{LetterDeleteBacking.delete}"></h:commandButton></f:facet>
+                   </h:column>
+                   
+                  <my:linkColumn label="标题" content="#{letter.title}" link=""></my:linkColumn>			
+	                   <my:linkColumn label="收信人" content="#{letter.receiverName}" link="profile/#{letter.receiverId}"></my:linkColumn>				
+				   <my:textColumn label="发送日期" content="#{letter.createdAt}"></my:textColumn>
+					
+				</h:dataTable>
+				</h:form>
+				</div>
+        </ui:define>
+        </ui:composition>
+	
+</html>

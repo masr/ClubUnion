@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+  <ui:composition template="/WEB-INF/layout.xhtml">
+        <ui:define name="title">首页</ui:define>
+        <ui:define name="header_content">
+        <style>
+         table{font-size:15px;}
+        </style>
+        </ui:define>
+        <ui:define name="main">
+        <div id="club_create_apply">
+        <h:form id="apply_form">
+        <h:panelGrid columns="3"> 
+                    
+                     <h:outputLabel value="您的年级" for="grade" />
+                    <h:inputText required="true" id="grade" value="#{ClubCreateApplyBacking.grade}" />
+                    <h:message for="grade" />
+                    
+                      <h:outputLabel value="您的院系" for="institute" />
+                    <h:inputTextarea required="true" id="institute" value="#{ClubCreateApplyBacking.institute}" />
+                    <h:message for="institute" />
+                    
+                     <h:outputLabel value="您想申请的组织的名称" for="club_name" />
+                    <h:inputTextarea required="true" id="club_name" value="#{ClubCreateApplyBacking.clubName}" />
+                    <h:message for="club_name" />
+                    
+                     <h:outputLabel value="描述一下您想申请的组织" for="description" />
+                    <h:inputTextarea required="true" id="description" value="#{ClubCreateApplyBacking.description}" />
+                    <h:message for="description" />
+                  
+         </h:panelGrid>
+         <br/>
+         <br/>
+         <h:commandButton action="#{ClubCreateApplyBacking.apply}" value="申请"></h:commandButton>
+        </h:form>
+        </div>
+        </ui:define>
+        </ui:composition>
+	
+	
+	
+</html>

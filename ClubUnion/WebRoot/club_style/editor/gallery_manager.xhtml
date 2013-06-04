@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:my="http://www.clubunion.com"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+  <ui:composition>
+  
+ <style type="text/css">
+			#gallery { float: left; width: 65%; min-height: 12em; } * html #gallery { height: 12em; } /* IE6 */
+			#gallery.custom-state-active { background: #eee; }
+			#gallery li { float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
+			#gallery li h5 { margin: 0 0 0.4em; cursor: move; }
+			#gallery li a { float: right; }
+			#gallery li a.ui-icon-zoomin { float: left; }
+			#gallery li img { width: 100%; cursor: move; }
+
+			#trash { float: right; width: 32%; min-height: 18em; padding: 1%;} * html #trash { height: 18em; } /* IE6 */
+			#trash h4 { line-height: 16px; margin: 0 0 0.4em; }
+			#trash h4 .ui-icon { float: left; }
+			#trash .gallery h5 { display: none; }
+		</style>
+	
+	   
+		<div class="demo ui-widget ui-helper-clearfix">
+
+			<ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
+			
+				
+			</ul>
+
+			<div id="trash" class="ui-widget-content ui-state-default">
+				<h4 class="ui-widget-header"><span class="ui-icon ui-icon-trash">Trash</span> Trash</h4>
+			</div>
+
+		</div><!-- End demo -->
+      <a href="#" class="upload_img">上传新图片</a><br/>
+      <a href="#" class="submit" >确定</a>
+		<div class="description">
+
+		
+		</div><!-- End demo-description -->
+  </ui:composition>
+   
+	
+</html>
+

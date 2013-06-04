@@ -1,0 +1,57 @@
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+
+	<ui:composition>
+	<h:panelGroup rendered="#{container.contentType==1}">
+    <ui:include src="/club_style/block/document_block.xhtml">
+        <ui:param name="container" value="#{container}"></ui:param>
+    </ui:include>
+	</h:panelGroup>
+	<h:panelGroup rendered="#{container.contentType==0}">
+    <ui:include src="/club_style/block/user_block.xhtml">
+        <ui:param name="container" value="#{container}"></ui:param>
+    </ui:include>
+	</h:panelGroup>
+	<h:panelGroup rendered="#{container.contentType==2}">
+    <ui:include src="/club_style/block/sub_header.xhtml">
+        <ui:param name="container" value="#{container}"></ui:param>
+    </ui:include>
+	</h:panelGroup>
+	<h:panelGroup rendered="#{container.contentType==3}">
+    <ui:include src="/club_style/block/logo_block.xhtml">
+        <ui:param name="container" value="#{container}"></ui:param>
+    </ui:include>
+	</h:panelGroup>
+	<h:panelGroup rendered="#{container.contentType==4}">
+    <ui:include src="/club_style/block/message_block.xhtml">
+        <ui:param name="container" value="#{container}"></ui:param>
+    </ui:include>
+	</h:panelGroup>
+		<h:panelGroup rendered="#{container.contentType==6}">
+    <ui:include src="/club_style/block/img_block.xhtml">
+        <ui:param name="container" value="#{container}"></ui:param>
+    </ui:include>
+	</h:panelGroup>
+			<h:panelGroup rendered="#{container.contentType==7}">
+    <ui:include src="/club_style/block/text_block.xhtml">
+        <ui:param name="container" value="#{container}"></ui:param>
+    </ui:include>
+	</h:panelGroup>
+	
+		
+	
+		<h:panelGroup rendered="#{container.contentType==9}">
+    <ui:include src="/club_style/block/gallery.xhtml">
+        <ui:param name="container" value="#{container}"></ui:param>
+        <ui:param name="index" value="#{index}"></ui:param>
+    </ui:include>
+	</h:panelGroup>
+			
+	</ui:composition>
+
+</html>

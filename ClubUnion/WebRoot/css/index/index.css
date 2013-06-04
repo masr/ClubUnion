@@ -1,0 +1,36 @@
+body{font-size:12px;}
+#container{min-height:500px;position:relative;margin-right:210px;margin-left:160px;min-width:400px;background-color:white;overflow:auto;padding-top:0px;}
+#left_side{position:absolute;width:150px;}
+#right_side{position:absolute;right:0px;top:0px;width:200px;overflow:hidden;}
+#footer{clear:both}
+
+
+#friend_list{margin-top:20px;}
+
+#post_scroll img{height:150px;margin:0 10px 0 10px;}
+
+#document_list td{background:url('link_dot.gif') no-repeat 5px 7px;text-indent:2em;}
+.document_ele{margin-bottom:10px;}
+.document_ele img{margin:0 10px 0;}
+#theme_switcher{padding-top:60px;background:url('pickup_design.gif')  no-repeat 15px 0px;}
+
+
+#calendar{font-size:10px;margin-top:20px;}
+#poster_gallery{margin-top:30px;}
+#poster_gallery img{width:200px;}
+
+a:link {
+	COLOR: #909528; TEXT-DECORATION: none
+}
+a:visited {
+	COLOR: #909528;  TEXT-DECORATION: none
+}
+a:hover {
+	COLOR: #646729; TEXT-DECORATION: underline
+}
+a:active {
+	COLOR: #646729; TEXT-DECORATION: underline
+}
+
+
+

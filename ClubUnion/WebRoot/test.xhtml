@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+  <ui:composition template="/WEB-INF/layout.xhtml">
+        <ui:define name="title">首页</ui:define>
+        <ui:define name="script">
+             <script type="text/javascript" src="js/calendar.js"></script>
+          <script type="text/javascript" src="js/jquery-ui-1.7.2.custom/development-bundle/ui/ui.draggable.js"></script>
+  <link type="text/css" rel="stylesheet" href="http://jqueryui.com/themes/base/ui.all.css" />
+
+
+<script type="text/javascript">
+             //<![CDATA[
+  (function($){$(function() {
+		$(".Calendar").draggable();
+		
+		
+	});
+	})(jQuery);
+  
+//]]>
+ </script>
+        </ui:define>
+        <ui:define name="style">
+        <style type="text/css">
+.Calendar {
+	font-family:Verdana;
+	font-size:12px;
+	background-color:#e0ecf9;
+	text-align:center;
+	width:200px;
+	height:160px;
+	padding:10px;
+	line-height:1.5em;
+}
+.Calendar a{
+	color:#1e5494;
+}
+
+.Calendar table{
+	width:100%; 
+	border:0;
+}
+
+.Calendar table thead{color:#acacac;}
+
+.Calendar table td {
+	font-size: 11px;
+	padding:1px;
+}
+#idCalendarPre{
+	cursor:pointer;
+	float:left;
+	padding-right:5px;
+}
+#idCalendarNext{
+	cursor:pointer;
+	float:right;
+	padding-right:5px;
+}
+#idCalendar td.onToday {
+	font-weight:bold;
+	color:#C60;
+}
+#idCalendar td.onSelect {
+	font-weight:bold;
+}
+</style>
+        </ui:define>
+        <ui:define name="main">
+        <div class="Calendar">
+        
+  <div id="idCalendarPre">&lt;&lt;</div>
+  <div id="idCalendarNext">&gt;&gt;</div>
+  <span id="idCalendarYear"></span>年 <span id="idCalendarMonth"></span>月
+  <table cellspacing="0">
+    <thead>
+      <tr>
+        <td>日</td>
+        <td>一</td>
+        <td>二</td>
+        <td>三</td>
+        <td>四</td>
+        <td>五</td>
+        <td>六</td>
+      </tr>
+    </thead>
+    <tbody id="idCalendar">
+    </tbody>
+  </table>
+  <input id="idCalendarPreYear" type="button" value="上一年" />
+<input id="idCalendarNow" type="button" value="当前月" />
+<input id="idCalendarNextYear" type="button" value="下一年" />
+</div>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+var cale = new Calendar("idCalendar", {
+	SelectDay: new Date().setDate(10),
+	onSelectDay: function(o){ o.className = "onSelect"; },
+	onToday: function(o){ o.className = "onToday"; },
+	onFinish: function(){
+		$("idCalendarYear").innerHTML = this.Year; $("idCalendarMonth").innerHTML = this.Month;
+		var flag = [10,15,20];
+		for(var i = 0, len = flag.length; i < len; i++){
+			this.Days[flag[i]].innerHTML = "<a href='javascript:void(0);' onclick=\"alert('日期是:"+this.Year+"/"+this.Month+"/"+flag[i]+"');return false;\">" + flag[i] + "</a>";
+		}
+	}
+});
+
+$("idCalendarPre").onclick = function(){ cale.PreMonth(); }
+$("idCalendarNext").onclick = function(){ cale.NextMonth(); }
+
+$("idCalendarPreYear").onclick = function(){ cale.PreYear(); }
+$("idCalendarNextYear").onclick = function(){ cale.NextYear(); }
+
+$("idCalendarNow").onclick = function(){ cale.NowMonth(); }
+//]]>
+</script>
+
+
+        </ui:define>
+        </ui:composition>
+	
+	
+	
+</html>

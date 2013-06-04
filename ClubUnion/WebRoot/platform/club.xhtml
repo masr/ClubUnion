@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:my="http://www.clubunion.com"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+  <ui:composition template="/WEB-INF/layout.xhtml">
+        <ui:define name="title">首页</ui:define>
+        <ui:define name="main">
+         <div id="all_clubs">
+         <div class="club_list">
+             <div class="managed_clubs">
+             <h:dataTable value="#{AllClubBacking.managedClubs}" var="club" rendered="#{UserBacking.loggedIn}">
+							
+								<my:clubListElement club="#{club}" label="您掌管的社团"></my:clubListElement>
+						
+						</h:dataTable>
+             </div>
+              <div class="joined_clubs">
+                <h:dataTable value="#{AllClubBacking.joinedClubs}" var="club" rendered="#{UserBacking.loggedIn}">
+						
+								<my:clubListElement club="#{club}" label="您参加的社团"></my:clubListElement>
+						
+						</h:dataTable>
+             </div>
+              <div class="cared_clubs">
+                 <h:dataTable value="#{AllClubBacking.caredClubs}" var="club" rendered="#{UserBacking.loggedIn}">
+							
+								<my:clubListElement club="#{club}" label="您关注的社团"></my:clubListElement>
+						
+						</h:dataTable>
+             </div>
+             <div class="normal_clubs">
+             <h:dataTable value="#{AllClubBacking.normalClubs}" var="club" rendered="#{UserBacking.loggedIn}">
+            
+								<my:clubListElement club="#{club}" label="其他社团"> </my:clubListElement>
+			 
+             </h:dataTable>
+             </div>
+             
+               <div class="all_clubs">
+             <h:dataTable value="#{AllClubBacking.normalClubs}" var="club" rendered="#{! UserBacking.loggedIn}">
+            
+								<my:clubListElement club="#{club}" label="所有社团"> </my:clubListElement>
+			 
+             </h:dataTable>
+             </div>
+             </div>
+         </div>
+        </ui:define>
+        </ui:composition>
+	
+	
+	
+</html>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+
+	<!--  reference to account -->
+	<managed-bean>
+		<managed-bean-name>AccountDocumentBacking</managed-bean-name>
+		<managed-bean-class>
+			cn.edu.nju.clubunion.mBean.account.AccountDocument</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>AccountEditBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.account.AccountEdit</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>AccountFriendBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.account.AccountFriend</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>AccountIndexBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.account.AccountIndex</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>AccountRequestBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.account.AccountRequest</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>LoginBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.account.Login</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>PasswordEditBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.account.PasswordEdit</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>RegistBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.account.Regist</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>UserBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.account.UserBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>UserShowBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.account.UserShow</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+
+	<!-- reference to club -->
+	<managed-bean>
+		<managed-bean-name>ClubApplyBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.club.ClubApply</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>ClubDocumentBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.club.ClubDocument</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>ClubStyleBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.club.ClubStyle</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>ClubMessageBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.club.ClubMessage</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>ClubUserBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.club.ClubUser</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>ClubEditInfoBacking</managed-bean-name>
+		<managed-bean-class>
+			cn.edu.nju.clubunion.mBean.club_manager.ClubEditInfo</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>ClubRequestBacking</managed-bean-name>
+		<managed-bean-class>
+			cn.edu.nju.clubunion.mBean.club_manager.ClubRequest</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>ClubHelpBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.club.ClubHelp</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>ManagerIndexBacking</managed-bean-name>
+		<managed-bean-class>
+			cn.edu.nju.clubunion.mBean.club_manager.ManagerIndex</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+		<managed-bean>
+		<managed-bean-name>ClubEditStyleBacking</managed-bean-name>
+		<managed-bean-class>
+			cn.edu.nju.clubunion.mBean.club_manager.ClubEditStyle</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<!-- reference to document -->
+	<managed-bean>
+		<managed-bean-name>DocumentCreateBacking</managed-bean-name>
+		<managed-bean-class>
+			cn.edu.nju.clubunion.mBean.document.DocumentCreate</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>DocumentEditBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.document.DocumentEdit</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>DocumentShowBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.document.DocumentShow</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<!-- reference to search -->
+	<managed-bean>
+		<managed-bean-name>UserSearchResultBacking</managed-bean-name>
+		<managed-bean-class>
+			cn.edu.nju.clubunion.mBean.search.UserSearchResult</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>UserSearchBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.search.UserSearch</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<!-- reference to letter -->
+	<managed-bean>
+		<managed-bean-name>LetterCreateBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.letter.LetterCreate</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>LetterIndexBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.letter.LetterIndex</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>LetterDeleteBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.letter.LetterDelete</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>SentLetterBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.letter.SentLetter</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>LetterShowBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.letter.LetterShow</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<!--  reference to platform -->
+	<managed-bean>
+		<managed-bean-name>AllClubBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.platform.AllClub</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>ClubCreateApplyBacking</managed-bean-name>
+		<managed-bean-class>
+			cn.edu.nju.clubunion.mBean.platform.ClubCreateApply</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>IndexBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.platform.Index</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+
+	<!-- reference to sup -->
+	<managed-bean>
+		<managed-bean-name>SingleClubCreateRequestBacking</managed-bean-name>
+		<managed-bean-class>
+			cn.edu.nju.clubunion.mBean.sup.SingleClubCreateRequest</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>SuperClubBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.sup.SuperClub</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>SuperDocumentBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.sup.SuperDocument</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>SuperRequestBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.sup.SuperRequest</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>SuperUserBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.sup.SuperUser</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<!-- !reference to helper -->
+	<managed-bean>
+		<managed-bean-name>HelperBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.helper.PageHelper</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>PosterBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.platform.Poster</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>CalendarBacking</managed-bean-name>
+		<managed-bean-class>cn.edu.nju.clubunion.mBean.platform.Calendar</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+
+
+</faces-config>

@@ -1,0 +1,3 @@
+cn.edu.nju.clubunion.testEJB.StartTest
+cn.edu.nju.clubunion.testEJB.InitialAssociationServiceTest
+cn.edu.nju.clubunion.testEJB.ActionServiceTest

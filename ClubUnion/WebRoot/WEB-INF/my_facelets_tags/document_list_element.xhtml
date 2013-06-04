@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+
+	<ui:composition>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="#{label}" styleClass="column_header"></h:outputText>
+			</f:facet>
+			<div class="document_ele">
+			<h3><h:outputLink value="/ClubUnion/club/#{document.clubId}/document/#{document.id}">
+				<h:outputText value="#{document.title}"></h:outputText>
+			</h:outputLink></h3>
+			<h5><h:outputLink value="/ClubUnion/club/#{document.clubId}"><h:outputText  value="#{document.clubName}    "></h:outputText></h:outputLink>发表日期：#{document.createdAt}</h5>
+			<br />
+			<div class="content">
+				<h:outputText value="#{document.content}" escape="false"></h:outputText>
+			</div>
+			<br />
+			<h:form>
+				<h:panelGroup rendered="#{master}">
+					<input type="hidden" value="#{document.id}" name="docid" />
+					<h:commandButton value="删除 " 
+						action="#{method.deleteDocument}">
+						<f:param value="#{document.id}" name="docid" />
+					</h:commandButton>
+					<h:outputLink value="/ClubUnion/club/#{document.clubId}/document/#{document.id}/edit" >
+					<h:outputText value="编辑"></h:outputText>
+				
+					</h:outputLink>
+				</h:panelGroup>
+			</h:form>
+			</div>
+		</h:column>
+
+	</ui:composition>
+
+
+
+</html>
+

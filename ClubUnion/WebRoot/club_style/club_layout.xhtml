@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	<head>
+
+
+		<title><ui:insert name="title">ClubUnion</ui:insert></title>
+
+
+		<c:set value="#{ClubStyleBacking.clubStyle}" var="style"></c:set>
+
+            		<!-- 此处是可选择的，动态实现 -->
+			<link type="text/css"
+				href="/ClubUnion/js/jquery-ui-1.7.2.custom/css/#{style.themeName}/jquery-ui.css"
+				rel="Stylesheet" />
+						 <link type="text/css" href="/ClubUnion/css/style/global.css"  rel="Stylesheet" />
+				
+								<link type="text/css" href="/ClubUnion/css/style/style.css" rel="Stylesheet" />
+				
+				<link type="text/css" href="/ClubUnion/css/club/default.css" class="club" rel="Stylesheet" />
+            	<link type="text/css" href="/ClubUnion/css/club/style.css" class="club" rel="Stylesheet" />
+            
+
+
+		  <script type="text/javascript" src="/ClubUnion/js/jquery-ui-1.7.2.custom/js/jquery-1.3.2.min.js"></script>
+		  		  <script type="text/javascript" src="/ClubUnion/js/extend_js.js"></script>
+		  <script type="text/javascript" src="/ClubUnion/js/jquery-ui-1.7.2.custom/js/jquery-ui-1.7.2.custom.min.js"></script> 
+				<script type="text/javascript" src="/ClubUnion/js/global.js"></script>
+		<script type="text/javascript" src="/ClubUnion/js/layout.js"></script>
+
+
+		
+		      <script>
+				// <![CDATA[ 
+				$(function(){
+			 StyleFixer.initPageTheme();
+
+			 });
+			 // ]]> 
+			 </script>
+			<script>
+		// <![CDATA[ 
+		$(function(){
+		$("body").css({"background-color":"#ffffff"
+		               ,"background-image":"url('')"
+		               })
+		$("#main").css({
+	
+		"background-color":"#{style.mainBackColor}",
+		"background-image":"url('#{style.mainBackURL}')",
+		"background-repeat":"#{style.mainBackRepeat}"
+		});
+		
+		$("#bg").css({
+		"background-color":"#{style.backColor}"
+		});
+		
+		$("#top_back").css({"background-image":"url('#{style.topBackURL}')",
+		"background-color":"#{style.topBackColor}","background-repeat":"#{style.topBackRepeat}"});
+		$("#left_back").css({"background-image":"url('#{style.leftBackURL}')","background-repeat":"#{style.leftBackRepeat}"});
+		$("#right_back").css({"background-image":"url('#{style.rightBackURL}')","background-repeat":"#{style.rightBackRepeat}"});
+		})
+		
+		
+		 // ]]> 
+		</script>
+		<style>
+
+	    #main *{color:#{style.fontColor};font-size:"#{style.fontSize}"}
+	     #main a{color:#{style.linkColor}}
+
+		</style>
+		
+		<ui:insert name="header_content"></ui:insert>
+		  
+		  
+	
+
+	</head>
+	<body>
+	<div id="page">
+	<ui:insert name="outer"></ui:insert>
+	<div id="bg">
+	<div id="left_back"></div>
+	<div id="all">
+	<div id="header">
+		<ui:include src="/header.xhtml"></ui:include>
+	</div>
+	<div id="main">
+	   <h:messages globalOnly="true"  infoClass="error"></h:messages>
+	   	<div id="top_back"></div>
+	   
+	      <ui:insert name="sub_header">
+	      <div id="sub_header"><ui:include src="/club_style/block/sub_header.xhtml"></ui:include></div>
+	      </ui:insert>
+			<ui:insert name="main"></ui:insert>
+			</div>
+			<div id="footer">
+					<ui:insert name="footer"><ui:include src="/footer.xhtml"></ui:include></ui:insert>
+	</div>
+	</div>
+	<div id="right_back"></div>
+
+	</div>
+	</div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+		
+		
+		
+		
+	     
+
+
+
+
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+			xmlns:my="http://www.clubunion.com"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+  <ui:composition template="/club_style/club_layout.xhtml">
+         <ui:define name="header_content">
+         <style>
+        #user_apply_to_club #main{font-size:17px;}
+         </style>
+         </ui:define>
+        <ui:define name="main">
+         <div id="user_apply_to_club">
+
+        <div id="left_bar"></div>
+        <div id="container">
+         <h:form id="apply_form">
+         <h:panelGrid columns="3">
+       
+                    <input type="hidden" value="#{param['club_id']}" name="club_id" /> 
+                     <h:outputLabel value="您的年级" for="grade" />
+                    <h:inputText required="true" id="grade" value="#{ClubApplyBacking.grade}" />
+                    <h:message for="grade" />
+                    
+                      <h:outputLabel value="您的院系" for="profession" />
+                    <h:inputTextarea required="true" id="profession" value="#{ClubApplyBacking.institute}" />
+                    <h:message for="profession" />
+                    
+                     <h:outputLabel value="您总得说点什么" for="description" />
+                    <h:inputTextarea required="true" id="description" value="#{ClubApplyBacking.description}" />
+                    <h:message for="description" />
+                  
+         </h:panelGrid>
+         <h:commandButton action="#{ClubApplyBacking.apply}" value="申请"></h:commandButton>
+         </h:form>
+         </div>
+         </div>
+        </ui:define>
+        </ui:composition>
+	
+	
+	
+</html>

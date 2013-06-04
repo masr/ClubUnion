@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+	
+        <ui:composition >
+        <div id="left_bar">
+        <ul>
+           <li> <h:outputLink value="/ClubUnion/club_manager/#{param['club_id']}/document"><h:outputText value="管理文件"></h:outputText></h:outputLink></li>
+                <li>   <h:outputLink value="/ClubUnion/club_manager/#{param['club_id']}/user"><h:outputText value="管理会员"></h:outputText></h:outputLink></li>
+               <li>    <h:outputLink value="/ClubUnion/club_manager/#{param['club_id']}/request"><h:outputText value="管理请求"></h:outputText></h:outputLink></li>
+                <li>   <h:outputLink value="/ClubUnion/club_manager/#{param['club_id']}/edit_info"><h:outputText value="编辑#{ClubHelpBacking.clubName}的资料"></h:outputText></h:outputLink></li>
+                       <li>   <h:outputLink value="/ClubUnion/club_manager/#{param['club_id']}/edit_style"><h:outputText value="修改样式"></h:outputText></h:outputLink></li>
+       
+         </ul>
+         </div>
+        </ui:composition>
+	
+	
+	
+</html>
+

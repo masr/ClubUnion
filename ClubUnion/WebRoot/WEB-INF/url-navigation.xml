@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+ <navigation-rule>
+  <from-view-id>/club/apply.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>success</from-outcome>
+   <to-view-id>/index.jsf</to-view-id>
+   <redirect/>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ <navigation-rule>
+  <from-view-id>/account/login.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>success</from-outcome>
+   <to-view-id>/index.jsf</to-view-id>
+   <redirect/>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+
+ <navigation-rule>
+  <from-view-id>/account/regist.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>success</from-outcome>
+   <to-view-id>/account/login.jsf</to-view-id>
+   <redirect/>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ <navigation-rule>
+  <from-view-id>/account/edit_password.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>success</from-outcome>
+   <to-view-id>/account/index.jsf</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ <navigation-rule>
+  <from-view-id>/account/edit.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>success</from-outcome>
+   <to-view-id>/account/index.jsf</to-view-id>
+   <redirect/>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ <navigation-rule>
+  <from-view-id>/document/edit.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>success</from-outcome>
+   <to-view-id>/</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ <navigation-rule>
+  <from-view-id>/document/create.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>success</from-outcome>
+   <to-view-id>/index.jsf</to-view-id>
+   <redirect/>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ <navigation-rule>
+  <from-view-id>/letter/create.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>success</from-outcome>
+   <to-view-id>/letter/index.jsf</to-view-id>
+   <redirect/>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ <navigation-rule>
+<from-view-id>/letter/index.xhtml</from-view-id>
+<navigation-case>
+<from-action>#{LetterDeleteBacking.delete}</from-action>
+<from-outcome>success</from-outcome>
+<to-view-id>/letter/index.jsf</to-view-id>
+<redirect/>
+</navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+<from-view-id>/platform/club_create_apply.xhtml</from-view-id>
+<navigation-case>
+<from-outcome>success</from-outcome>
+<to-view-id>/index.jsf</to-view-id>
+<redirect/>
+</navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+<from-view-id>/platform/user_search.xhtml</from-view-id>
+<navigation-case>
+<from-outcome>success</from-outcome>
+<to-view-id>/platform/user_search_result.jsf</to-view-id>
+</navigation-case>
+</navigation-rule>
+
+<navigation-rule>
+<from-view-id>/*</from-view-id>
+<navigation-case>
+<from-action>#{UserBacking.logout}</from-action>
+<from-outcome>success</from-outcome>
+<to-view-id>/index.jsf</to-view-id>
+<redirect/>
+</navigation-case>
+<navigation-case>
+<from-action>#{UserBacking.logout}</from-action>
+<from-outcome>fail</from-outcome>
+<to-view-id>/index.jsf</to-view-id>
+<redirect/>
+</navigation-case>
+</navigation-rule>
+
+</faces-config>

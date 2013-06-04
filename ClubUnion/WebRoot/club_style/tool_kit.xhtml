@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xml:lang="en" lang="en">
+
+	<ui:composition>
+		<div id="tool_kit">
+
+			<style>
+#img_uploader,#self_design_selector,#img_content_creator,#text_content_creator,#title_editor,#gallery_manager
+	{
+	display: none;
+}
+
+#tool_kit a:visited {
+	color: blue
+}
+
+#tool_kit a:hover {
+	color: orange;
+}
+
+#tool_kit a:link {
+	color: blue
+}
+
+h2{font-size:15px;margin:5px;}
+.upload_all{margin-top:30px;font-size:15px;}
+
+</style>
+  <script type="text/javascript" src="/ClubUnion/js/tool_kit/text_content_editor.js"></script>
+       <script type="text/javascript" src="/ClubUnion/js/tool_kit/gallery_manager.js"></script>
+  <script src="/ClubUnion/js/tool_kit/edit_title_editor.js"></script>
+		<script type="text/javascript" src="/ClubUnion/js/tool_kit/img_upload_editor.js"></script>
+	<script type="text/javascript"
+				src="/ClubUnion/js/tool_kit/tool_kit.js">
+</script>
+			<script>
+			$(function(){
+			  clubId=#{ClubStyleBacking.clubId}
+      pageStyle=new PageStyle("#{ClubStyleBacking.clubId}");
+      editting=false;
+      widgets=new Array();
+     ToolKitInit.init();
+       titleEditor.init();
+       	  TextEditor.init();
+       	  imgUploader.init();
+     	   	GalleryManager.initGalleryManager();
+			})
+   
+    
+     
+     
+  </script>
+		
+
+			<div id="tabs">
+				<ul>
+					<li id="link_to_tab1">
+						<a href="#tabs-1">全局</a>
+					</li>
+					<li id="link_to_tab2">
+						<a href="#tabs-2">块</a>
+					</li>
+
+					<li id="link_to_tab3">
+						<a href="#tabs-3">背景</a>
+					</li> 
+					<li id="link_to_tab4">
+						<a href="#tabs-4">艺术</a>
+					</li>
+					
+
+
+				</ul>
+				<div id="tabs-1" class="tab_block">
+
+                  <h2>边框</h2>
+					<div id="border_color_palette">
+						<a href="#">边框颜色</a>
+					</div>
+					<div id="border_solid_slider">
+						<a href="#" onclick="return false">边框宽度</a>
+						<div class="slider"></div>
+					</div> 
+					<h2>字体</h2>
+					<div id="normal_color_palette">
+						<a href="#">普通字体颜色</a>
+					</div>
+					<div id="link_color_palette">
+						<a href="#">链接字体颜色</a>
+					</div>
+					<div id="title_color_palette">
+						<a href="#">标题字体颜色</a>
+					</div>
+					<div id="font_size_slider">
+						<a href="#" onclick="return false">字体大小</a>
+						<div class="slider"></div>
+					</div>
+					<h2>修改主题</h2>
+					
+					<div id="theme_switcher"></div>
+					<div class="upload_all">
+						<a href="#">全部保存</a>
+					</div>
+				</div>
+				<div id="tabs-2" class="tab_block">
+                      <h2>边框</h2>
+					<div id="c_border_color_palette">
+						<a href="#">边框颜色</a>
+					</div>
+						<div id="c_border_solid_slider">
+						<a href="#" onclick="return false">边框宽度</a>
+						<div class="slider"></div>
+					</div>
+					<h2>字体</h2>
+					<div id="c_normal_color_palette">
+						<a href="#">普通字体颜色</a>
+					</div>
+					<div id="c_link_color_palette">
+						<a href="#">链接字体颜色</a>
+					</div>
+				
+					<br />
+					<div id="c_font_size_slider">
+						<a href="#" onclick="return false">字体大小</a>
+						<div class="slider"></div>
+					</div>
+					<br />
+					
+                   <h2>标题</h2>
+					<div id="c_edit_title">
+						<a href="#">修改标题</a>
+					</div>
+					<div id="c_title_color_palette">
+						<a href="#">标题字体颜色</a>
+					</div>
+					
+                      <h2>修改主题</h2>
+					<div id="c_theme_switcher"></div>
+					<a id="c_edit_content" href="#">修改内容</a>
+					<div id="c_delete">
+						<font color="red"><a href="#">删除</a></font>
+					</div>
+					<div class="upload_all">
+						<a href="#">全部保存</a>
+					</div>
+				</div>
+				<div id="tabs-3" class="tab_block">
+					<h2>
+						外背景
+					</h2>
+					<div id="back_color_palette">
+						<a href="#">外背景颜色</a>
+					</div>
+					<div id="upload_new_left_back">
+						<a href="#">贴左背景图片</a>
+					</div>
+					<div id="left_back_repeat">
+						<a href="#">左背景平铺</a>
+					</div>
+					<div id="upload_new_right_back">
+						<a href="#">贴右背景图片</a>
+					</div>
+					<div id="right_back_repeat">
+						<a href="#">右背景平铺</a>
+					</div>
+					<h2>
+						头背景
+					</h2>
+					<div class="palette" id="top_color_palette">
+						<a href="#">头背景颜色</a>
+					</div>
+
+					<div id="upload_new_top_back">
+						<a href="#">贴头部背景图片</a>
+					</div>
+					<div id="top_back_repeat">
+						<a href="#">头背景平铺</a>
+					</div>
+					<h2>
+						主背景
+					</h2>
+					<div class="palette" id="main_color_palette">
+						<a href="#">主背景颜色</a>
+					</div>
+
+					<div id="upload_new_main_back">
+						<a href="#">贴主体背景</a>
+					</div>
+
+
+					<div id="main_back_repeat">
+						<a href="#">主背景平铺</a>
+					</div>
+                   <div class="upload_all">
+						<a href="#">全部保存</a>
+					</div>
+
+
+				</div>
+				<div id="tabs-4" class="tab_block">
+					<div id="upload_new_logo">
+						<a href="#">上传logo</a>
+					</div>
+
+					<div id="upload_new_img">
+						<a href="#">贴一张图片</a>
+					</div>
+					<div id="upload_new_text">
+						<a href="#">贴一个段落</a>
+					</div>
+
+					<div id="upload_new_gallery">
+						<a href="#">贴相册</a>
+					</div>
+					<div class="upload_all">
+						<a href="#">全部保存</a>
+					</div>
+				</div>
+			
+
+
+
+
+			</div>
+
+
+
+			<div id="text_content_creator">
+				<ui:include src="editor/text_content_creator.xhtml"></ui:include>
+			</div>
+			<br />
+			<div id="img_uploader">
+				<ui:include src="editor/img_upload_editor.xhtml"></ui:include>
+			</div>
+			<div id="title_editor">
+				<ui:include src="editor/title_editor.xhtml"></ui:include>
+			</div>
+			<div id="gallery_manager">
+				<ui:include src="editor/gallery_manager.xhtml"></ui:include>
+				
+			</div>
+		</div>
+	</ui:composition>
+
+</html>
+

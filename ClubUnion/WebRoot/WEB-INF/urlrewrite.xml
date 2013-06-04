@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 2.6//EN"
+        "http://tuckey.org/res/dtds/urlrewrite2.6.dtd">
+
+<!--
+
+    Configuration file for UrlRewriteFilter
+    http://tuckey.org/urlrewrite/
+
+-->
+<urlrewrite>
+
+    
+       <!-- prefix with account -->
+        <rule>
+            <from>^/account/regist$</from>
+            <to>/account/regist.jsf</to>
+        </rule>
+        <rule>
+        <from>^/account/login$</from>
+        <to>/account/login.jsf</to>
+        </rule>
+        <rule>
+        <from>^/account/edit_passwd$</from>
+        <to>/account/edit_password.jsf</to>
+        </rule>
+       
+        <rule>
+        <from>^/account/document$</from>
+        <to>/account/document.jsf</to>
+        </rule>
+        <rule>
+        <from>^/account/edit$</from>
+        <to>/account/edit.jsf</to>
+        </rule>
+        <rule>
+        <from>^/account/request$</from>
+        <to>/account/request.jsf</to>
+        </rule>  
+          <rule>
+            <from>^/account/$</from>
+            <to>/account/index.jsf</to>
+        </rule>
+        <rule>
+        <from>^/account/friend$</from>
+        <to>/account/friend.jsf</to>
+        </rule>
+         
+         
+         <!-- special prefix -->
+           <rule>
+        <from>^/club/$</from>
+        <to>/platform/club.jsf</to>
+        </rule>
+         <rule>
+     
+        <from>^/club_create_apply/$</from>
+        <to>/platform/club_create_apply.jsf</to>
+        </rule>
+        <rule>
+        <from>^/clubs_intro/$</from>
+        <to>/platform/clubs_intro.jsf</to>
+        </rule>
+        <rule>
+        <from>^/friend/$</from>
+        <to>/account/friend.jsf</to>
+        </rule>
+        <rule>
+        <from>^/profile/([0-9]*)$</from>
+        <to>/account/show.jsf?user_id=$1</to>
+        </rule>
+        
+        
+        <!-- prefix with club -->
+          <rule>
+        <from>^/club/([0-9]+)/apply$</from>
+        <to>/club/apply.jsf?club_id=$1</to>
+        </rule>
+          <rule>
+        <from>^/club/([0-9]+)/document$</from>
+        <to>/club/document.jsf?club_id=$1</to>
+        </rule>
+            <rule>
+        <from>^/club/([0-9]+)/show$</from>
+        <to>/club/show.jsf?club_id=$1</to>
+        </rule>
+        <rule>
+        <from>^/club/([0-9]+)$</from>
+        <to>/club/index.jsf?club_id=$1</to>
+        </rule>
+        <rule>
+            <from>^/club/([0-9]+)/document/([0-9]+)$</from>
+        <to>/document/show.jsf?document_id=$2&amp;club_id=$1</to>
+        </rule>
+          <rule>
+        <from>^/club/([0-9]+)/document/([0-9]+)/edit$</from>
+        <to>/document/edit.jsf?document_id=$2&amp;club_id=$1</to>
+        </rule>
+
+        
+        <rule>
+        <from>^/club/([0-9]+)/message$</from>
+        <to>/club/message.jsf?club_id=$1</to>
+        </rule>
+          <rule>
+        <from>^/club/([0-9]+)/user$</from>
+        <to>/club/user.jsf?club_id=$1</to>
+        </rule>
+        
+        
+        <!-- prefix with club_manager -->
+          <rule>
+        <from>^/club_manager/([0-9]+)/request$</from>
+        <to>/club_manager/request.jsf?club_id=$1</to>
+        </rule>
+       <rule>
+        <from>^/club_manager/([0-9]+)/user$</from>
+        <to>/club_manager/user.jsf?club_id=$1</to>
+        </rule>
+         <rule>
+        <from>^/club_manager/([0-9]+)/add_user_search$</from>
+        <to>/club_manager/add_user_search.jsf?club_id=$1</to>
+        </rule>
+         <rule>
+        <from>^/club_manager/([0-9]+)/add_user_result$</from>
+        <to>/club_manager/add_user_result.jsf?club_id=$1</to>
+        </rule>
+         <rule>
+        <from>^/club_manager/([0-9]+)/document$</from>
+        <to>/club_manager/document.jsf?club_id=$1</to>
+        </rule>
+        <rule>
+        <from>^/club_manager/([0-9]+)/create_document$</from>
+        <to>/document/create.jsf?club_id=$1</to>
+        </rule>
+         <rule>
+        <from>^/club_manager/([0-9]+)/edit_info$</from>
+        <to>/club_manager/edit_info.jsf?club_id=$1</to>
+        </rule>
+         <rule>
+        <from>^/club_manager/([0-9]+)/edit_style</from>
+        <to>/club_style/edit_style.jsf?club_id=$1</to>
+        </rule>
+         <rule>
+        <from>^/club_manager/([0-9]+)$</from>
+        <to>/club_manager/index.jsf?club_id=$1</to>
+        </rule>
+        
+       
+        
+    <!-- prefix with letter -->
+          <rule>
+        <from>^/letter/$</from>
+        <to>/letter/index.jsf</to>
+        </rule>
+          <rule>
+        <from>^/letter/create$</from>
+        <to>/letter/create.jsf</to>
+        </rule>
+          <rule>
+        <from>^/letter/send_box$</from>
+        <to>/letter/sent_letter.jsf</to>
+        </rule>
+        <rule>
+        <from>^/letter/([0-9]+)$</from>
+        <to>/letter/show.jsf?letter_id=$1</to>
+        </rule>
+        
+        <!--  prefix with sup -->
+        <rule>
+        <from>^/sup/club$</from>
+        <to>/sup/club.jsf</to>
+        </rule>
+         <rule>
+        <from>^/sup/document$</from>
+        <to>/sup/document.jsf</to>
+        </rule>
+         <rule>
+        <from>^/sup/$</from>
+        <to>/sup/index.jsf</to>
+        </rule>
+         <rule>
+        <from>^/sup/request$</from>
+        <to>/sup/request.jsf</to>
+        </rule>
+         <rule>
+        <from>^/sup/user$</from>
+        <to>/sup/user.jsf</to>
+        </rule>
+      
+        
+       <!-- prefix with search -->
+        <rule>
+        <from>^/search/documen$t</from>
+        <to>/platform/document_search.jsf</to>
+        </rule>
+        <rule>
+        <from>^/search/user$</from>
+        <to>/platform/user_search.jsf</to>
+        </rule>
+      
+        
+   <!--
+    Redirect a directory
+        <rule>
+            <from>/some/olddir/(.*)</from>
+            <to type="redirect">/very/newdir/$1</to>
+        </rule>
+
+    Clean a url
+        <rule>
+            <from>/products/([0-9]+)</from>
+            <to>/products/index.jsp?product_id=$1</to>
+        </rule>
+    eg, /products/1234 will be passed on to /products/index.jsp?product_id=1234 without the user noticing.
+
+    Browser detection
+        <rule>
+            <condition name="user-agent">Mozilla/[1-4]</condition>
+            <from>/some/page.html</from>
+            <to>/some/page-for-old-browsers.html</to>
+        </rule>
+    eg, will pass the request for /some/page.html on to /some/page-for-old-browsers.html only for older
+    browsers whose user agent srtings match Mozilla/1, Mozilla/2, Mozilla/3 or Mozilla/4.
+
+    -->
+
+</urlrewrite>
